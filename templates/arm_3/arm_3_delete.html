@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        {% if user.username == 'clay' %}
+            <aside class="main-sidebar">
+                <section class="sidebar">
+                <ul class="sidebar-menu tree" >
+                    <li class="treeview ">
+                    <a href="{% url 'arm_3_new' %}">
+                        <i class="bi bi-book-half"></i>
+                        <span style="padding-left: 30px;">Yangi kitob kirish</span>
+                        <span class="pull-right-container"><i class="bi bi-book-half"></i></span>
+                    </a>              
+                    </li>
+
+                    <li class="treeview ">
+                    <a href="{% url 'arm_3_list' %}">
+                        <i class="bi bi-book-half"></i> 
+                        <span style="padding-left: 30px;">Barcha kitoblar</span>
+                        <span class="pull-right-container"><i class="bi bi-book-half"></i></span>
+                    </a>              
+                    </li>
+                    
+                </ul>
+                </section>
+            </aside>
+            <div class="content-wrapper" style="min-height: 868px;">          
+                <section class="content">        
+                    <h2>Kitobni o`chirish</h2>
+                    <form action="" method="post" >{% csrf_token %}     
+                        <p>"{{ arm_3.kitob_nomi|title }}" nomli kitobni o`chirishni istaysizmi?</p>          
+                        <button class="btn btn-primary" type="submit">Ha</button> 
+                    </form>
+                </section>
+            </div>
+        {% endif %}
+    
+    {% endif %}
+    
+{% endblock content %}

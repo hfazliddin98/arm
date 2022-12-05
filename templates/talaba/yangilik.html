@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Kitob kirish{% endblock title %}
+
+{% block content %}
+<aside class="main-sidebar">
+  <section class="sidebar">
+    <ul class="sidebar-menu tree" >
+      <li class="treeview ">
+        <a href="{% url 'yangilik' %}">
+          <i class="bi bi-mortarboard-fill"></i> 
+          <span style="padding-left: 30px;">Yangiliklar</span>
+          <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+        </a>          
+      </li>
+      <li class="treeview ">
+        <a href="{% url 'barcha' %}">
+          <i class="bi bi-mortarboard-fill"></i>
+          <span style="padding-left: 30px;">Barcha kitoblar</span>
+          <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+        </a>                    
+      </li>
+      <li class="treeview ">
+        <a href="{% url 'buyurtma' %}">
+          <i class="bi bi-mortarboard-fill"></i> 
+          <span style="padding-left: 30px;">Kitob buyurtma</span>
+          <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+        </a>                    
+      </li>      
+      <li class="treeview ">
+        <a href="{% url 'olgan_kitob' %}">
+          <i class="bi bi-mortarboard-fill"></i>
+          <span style="padding-left: 30px;">Olgan kitoblar</span>
+          <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+        </a>                    
+      </li>                                      
+    </ul>
+  </section>
+</aside>
+  <div class="content-wrapper" style="min-height: 868px;">
+    <section class="content-header">
+    <ul class="breadcrumb">
+        <li><a href="#">Asosiy</a></li>
+        <li class="active">Bosh sahifa</li>
+    </ul>    
+    </section>
+    <section class="content">        
+    <div class="row">
+        <div class="col col-md-12">
+        <div class="box box-info">
+            <div class="box-body">
+            <div class="row">
+
+                <div class="col-lg-4 col-xs-3">
+                    <!-- small box -->
+                    <div style="width: 18rem;">
+                        <img src="https://avatars.mds.yandex.net/i?id=03ba6c686a66da5a18416119dd804a04-5219442-images-thumbs&n=13" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+                </div>
+
+                <div class="col-lg-4 col-xs-3">
+                    <!-- small box -->
+                    <div style="width: 18rem; padding-right: 10px;">
+                        <img src="https://avatars.mds.yandex.net/i?id=03ba6c686a66da5a18416119dd804a04-5219442-images-thumbs&n=13" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+                </div>
+
+                <div class="col-lg-4 col-xs-3">
+                    <!-- small box -->
+                    <div style="width: 18rem; padding-right: 10px;">
+                        <img src="https://avatars.mds.yandex.net/i?id=03ba6c686a66da5a18416119dd804a04-5219442-images-thumbs&n=13" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+                </div>
+
+            </div>
+            <!-- /.row -->
+            <div class="row">
+
+                <div class="col-lg-4 col-xs-3">
+                    <!-- small box -->
+                    <div style="width: 18rem;">
+                        <img src="https://avatars.mds.yandex.net/i?id=03ba6c686a66da5a18416119dd804a04-5219442-images-thumbs&n=13" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+                </div>
+
+                <div class="col-lg-4 col-xs-3">
+                    <!-- small box -->
+                    <div style="width: 18rem; padding-right: 10px;">
+                        <img src="https://avatars.mds.yandex.net/i?id=03ba6c686a66da5a18416119dd804a04-5219442-images-thumbs&n=13" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+                </div>
+
+                <div class="col-lg-4 col-xs-3">
+                    <!-- small box -->
+                    <div style="width: 18rem; padding-right: 10px;">
+                        <img src="https://avatars.mds.yandex.net/i?id=03ba6c686a66da5a18416119dd804a04-5219442-images-thumbs&n=13" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+                </div>
+                                     
+            </div>
+            <!-- /.row -->
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+</div>
+  
+  {% endblock content %}

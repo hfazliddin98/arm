@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    <aside class="main-sidebar">      
+        <section class="sidebar">
+            <ul class="sidebar-menu tree" >
+                <li class="treeview ">
+                <a href="{% url 'arm_1_new' %}">
+                    <i class="bi bi-book-half"></i> 
+                    <span style="padding-left: 30px;">Yangi kitob kiritish</span>
+                    <span class="pull-right-container"><i class="bi bi-book-half"></i></span>
+                </a>              
+                </li>
+
+                <li class="treeview ">
+                <a href="{% url 'arm_1_list' %}">
+                    <i class="bi bi-book-half"></i>
+                    <span style="padding-left: 30px;">Barcha kitoblar</span>
+                    <span class="pull-right-container"><i class="bi bi-book-half"></i></span>
+                </a>              
+                </li>
+                
+            </ul>
+        </section>
+    </aside>
+    <div class="content-wrapper" style="min-height: 868px;">          
+        <section class="content">        
+            <h2>Yangi kitob kiritish uchun</h2>
+            <form method="post" enctype="multipart/form-data">{% csrf_token %}
+                {{ form|crispy }}
+                <br>
+            <button class="btn btn-primary" type="submit">Saqlsh</button> 
+            </form>
+        </section>
+    </div>
+{% endif %}
+{% endblock content %}

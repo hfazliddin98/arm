@@ -1,0 +1,39 @@
+body {
+    clear: both;
+    color: blue;
+   
+}
+p {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    box-sizing: border-box;
+}
+.jadval {
+    color: red;
+    margin: 0%;
+    display: inline;
+    border: 1px solid black;
+    padding: 10px;
+    border-width: 1px;
+    box-sizing: border-box;
+    border-collapse: collapse;
+    margin-block-start:0em;
+    margin-block-end: 0em;
+    width: 200px;
+
+}
+.k {
+    color:red;
+}
+.da {
+    color: red;
+    box-sizing: border-box;
+}
+.h {
+    color: red;
+}
+.r {
+    color: red;
+    padding: 10px;
+    border: 5px solid red;
+}

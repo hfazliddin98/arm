@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Ro`yhatdan o`tish{% endblock title %}
+{% block content %}    
+
+    <div class="content-wrapper" style="min-height: 100%;">
+        
+        <section class="content">        
+            <h2>Ro`yhatdan o`tish</h2>
+            <form method="post">{% csrf_token %}
+                {{form|crispy}}
+                <br>
+                <button class="btn btn-primary" type="submit">Saqlash</button>
+            </form>
+        </section>
+    </div>
+    
+    
+{% endblock content %}

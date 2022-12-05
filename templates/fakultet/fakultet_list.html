@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+
+
+{% block title %}fakultet kirish{% endblock title %}
+
+{% block content %}
+  {% if user.is_authenticated %}
+    {% if user.username == 'clay' %}
+      <aside class="main-sidebar">
+        <section class="sidebar">
+        <ul class="sidebar-menu tree" >
+            <li class="treeview ">
+            <a href="{% url 'fakultet_new' %}">
+                <i class="fa fa-briefcase"></i> 
+                <span>Yangi fakultet kirish</span>
+                <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+            </a>              
+            </li>
+
+            <li class="treeview ">
+            <a href="{% url 'fakultet_list' %}">
+                <i class="fa fa-users"></i> 
+                <span>Barcha fakultetlar</span>
+                <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+            </a>              
+            </li>
+            
+        </ul>
+        </section>
+      </aside>
+      <div class="content-wrapper" style="min-height: 868px;">          
+        <section class="content">        
+          {% for fakultet in object_list %}
+            <div class="card" >
+              <div class="card-header">
+                <span class="font-weight-bold"><a href="{% url 'fakultet_detail' fakultet.pk %}"><h4>{{fakultet.fakultet|title}}</h4></a></span>               
+                <span class="font-weight-bold">{{ arm.mualif }}</span>
+              </div>           
+            <br>
+            <hr>    
+          
+            </div>
+          {% endfor %} 
+        </section>
+      </div>
+    {% endif %}
+
+    {% if user.username == 'fakultet' %}
+      <aside class="main-sidebar">
+        <section class="sidebar">
+        <ul class="sidebar-menu tree" >
+            <li class="treeview ">
+            <a href="{% url 'fakultet_new' %}">
+                <i class="fa fa-briefcase"></i> 
+                <span>Yangi fakultet kirish</span>
+                <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+            </a>              
+            </li>
+
+            <li class="treeview ">
+            <a href="{% url 'fakultet_list' %}">
+                <i class="fa fa-users"></i> 
+                <span>Barcha fakultetlar</span>
+                <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+            </a>              
+            </li>
+            
+        </ul>
+        </section>
+      </aside>
+      <div class="content-wrapper" style="min-height: 868px;">          
+        <section class="content">        
+          {% for arm_1 in object_list %}
+            <div class="card" >
+              <div class="card-header">
+                <span class="font-weight-bold"><h4>{{fakultet.fakulteti|title}}</h4></span>               
+                <span class="font-weight-bold">{{ arm.mualif }}</span>
+              </div>           
+            <br>
+            <hr>    
+          
+            </div>
+          {% endfor %} 
+        </section>
+      </div>
+    {% endif %}
+  {% else %}
+    <aside class="main-sidebar">
+      <section class="sidebar">
+      <ul class="sidebar-menu tree" >
+          <li class="treeview ">
+          <a href="{% url 'arm_1_list' %}">
+              <i class="fa fa-briefcase"></i> 
+              <span>Barcha fakultetlar</span>
+              <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+          </a>              
+          </li>          
+      </ul>
+      </section>
+    </aside>
+    <div class="content-wrapper" style="min-height: 868px;">          
+      <section class="content">        
+        {% for arm_1 in object_list %}
+          <div class="card" >
+            <div class="card-header">
+              <span class="font-weight-bold"><h2>{{arm_1.fakultet_nomi}}</h2></span>
+              <span class="font-weight-bold">{{ arm.adabiyot }}</span>
+              <span class="font-weight-bold">{{ arm.mualif }}</span>
+            </div>
+          
+            <a type="button" class="btn btn-secondary" src="{{ arm_1.file.url }}">Yuklab olish</a>
+          
+          <br>
+          <hr>    
+        
+          </div>
+        {% endfor %} 
+      </section>
+    </div>
+  {% endif %}
+  
+  
+      
+{% endblock content %}

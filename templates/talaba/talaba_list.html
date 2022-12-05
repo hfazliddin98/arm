@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Kitob kirish{% endblock title %}
+
+{% block content %}
+  {% if user.is_authenticated %}
+    {% if user.username == 'clay' %}
+      <aside class="main-sidebar">
+        <section class="sidebar">
+        <ul class="sidebar-menu tree" >
+            <li class="treeview ">
+            <a href="{% url 'talaba_new' %}">
+              <i class="bi bi-mortarboard-fill"></i>
+                <span style="padding-left: 30px;">Yangi kitob kirish</span>
+                <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+            </a>              
+            </li>
+
+            <li class="treeview ">
+            <a href="{% url 'talaba_list' %}">
+              <i class="bi bi-mortarboard-fill"></i> 
+                <span style="padding-left: 30px;">Barcha kitoblar</span>
+                <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+            </a>              
+            </li>
+            
+        </ul>
+        </section>
+      </aside>
+      <div class="content-wrapper" style="min-height: 868px;">          
+        <section class="content">        
+          {% for talaba in object_list %}
+            <div class="card" >
+              <div class="card-header">
+                <span class="font-weight-bold"><a href="{% url 'talaba_detail' talaba.pk %}"><h4>{{talaba.talaba|title}}</h4></a></span>               
+                <span class="font-weight-bold">{{ arm.mualif }}</span>
+              </div>           
+            <br>
+            <hr> 
+            <table class="table table-bordered">
+              <tbody>
+                <tr>
+                  <!--qatori hisobga olinsin-->
+                  <th rowspan="1" style="text-align: center; vertical-align: middle;">№ </th>
+                  <th rowspan="1" style="text-align: center; vertical-align: middle;">Fakultet</th>
+                  <th rowspan="1" style="text-align: center; vertical-align: middle;">Jami talaba</th>
+                  <th rowspan="1" style="text-align: center; vertical-align: middle;">Jami talaba </th>
+                  <th rowspan="" style="text-align: center; vertical-align: middle;">Jami talaba </th>
+                  <th rowspan="1" style="text-align: center; vertical-align: middle;">Jami talaba </th>
+                  <th rowspan="1" style="text-align: center; vertical-align: middle;">Fakultet</th>
+                  <th rowspan="1" style="text-align: center; vertical-align: middle;">Jami talaba</th>
+                  <th rowspan="1" style="text-align: center; vertical-align: middle;">Jami talaba </th>
+                  <th rowspan="1" style="text-align: center; vertical-align: middle;">Jami talaba </th>
+                  <th rowspan="1" style="text-align: center; vertical-align: middle;">Jami talaba </th>               
+                </tr>
+              </tbody>
+            </table> 
+            
+            {% for arm_2 in object_list %}
+  
+              <table class="table table-bordered">
+                <tbody>
+                  <tr>
+                    <!--qatori hisobga olinsin-->
+                    <td style="vertical-align: center">{{arm_2.id}}</td>
+                    <td style="vertical-align: center">{{arm_2.familya|title}}</td>
+                    <td style="text-align: center; vertical-align: center">{{arm_2.familya|title}}</td>
+                    <td style="text-align: center; vertical-align: center"></td>
+                    <td style="vertical-align: center">{{arm_2.familya|title}}</td>
+                    <td style="vertical-align: center">{{arm_2.familya|title}}</td>
+                    <td style="text-align: center; vertical-align: center">{{arm_2.familya|title}}</td>
+                    <td style="text-align: center; vertical-align: center"></td>
+                    <td style="vertical-align: center">{{arm_2.familya|title}}</td>
+                    <td style="vertical-align: center">{{arm_2.familya|title}}</td>
+                    <td style="text-align: center; vertical-align: center">{{arm_2.familya|title}}</td>                 
+                  </tr>
+                </tbody>
+              </table>                
+            {% endfor %}   
+          
+            </div>
+          {% endfor %} 
+        </section>
+      </div> 
+           
+    {% endif %}
+
+    {% if user.lavozimi == 'talaba' %}
+      <aside class="main-sidebar">
+        <section class="sidebar">
+        <ul class="sidebar-menu tree" >
+            <li class="treeview ">
+            <a href="{% url 'talaba_new' %}">
+              <i class="bi bi-mortarboard-fill"></i>
+                <span style="padding-left: 30px;">Yangi kitob kirish</span>
+                <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+            </a>              
+            </li>
+
+            <li class="treeview ">
+            <a href="{% url 'talaba_list' %}">
+              <i class="bi bi-mortarboard-fill"></i>
+                <span style="padding-left: 30px;">Barcha kitoblar</span>
+                <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+            </a>              
+            </li>
+            
+        </ul>
+        </section>
+      </aside>
+      <div class="content-wrapper" style="min-height: 868px;">          
+        <section class="content">        
+          {% for arm_1 in object_list %}
+            <div class="card" >
+              <div class="card-header">
+                <span class="font-weight-bold"><h4>{{talaba.talabai|title}}</h4></span>               
+                <span class="font-weight-bold">{{ arm.mualif }}</span>
+              </div>           
+            <br>
+            <hr>    
+          
+            </div>
+          {% endfor %} 
+        </section>
+      </div>
+    {% endif %}
+  
+  {% endif %}  
+  
+      
+{% endblock content %}

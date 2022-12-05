@@ -1,0 +1,198 @@
+{% extends 'base.html' %}
+
+{% block title %}Bosh sahifa{% endblock title %}
+
+{% block content %}
+  
+  {% if user.is_authenticated %} 
+    {% if user.username == 'clay' %}
+      <aside class="main-sidebar">
+        <section class="sidebar">
+          <ul class="sidebar-menu tree">
+
+            <li class="treeview ">
+              <a href="{% url 'fakultet_list' %}">
+                <i class="fa fa-briefcase"></i> 
+                <span>Fakultet</span>
+                <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+              </a>              
+            </li>
+
+            <li class="treeview ">
+              <a href="{% url 'kafedra_list' %}">
+                <i class="fa fa-users"></i> 
+                <span>Kafedra</span>
+                <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+              </a>              
+            </li>
+
+            <li class="treeview ">
+              <a href="{% url 'yonalish_list' %}">
+                <i class="fa fa-users"></i> 
+                <span>Yo`nalish</span>
+                <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+              </a>              
+            </li>
+
+            <li class="treeview ">
+              <a href="{% url 'guruh_list' %}">
+                <i class="fa fa-users"></i> 
+                <span>Guruh</span>
+                <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+              </a>              
+            </li>
+
+            <li class="treeview push-menu">
+              <a href="#">
+                <i class="fa fa-user"></i> 
+                <span>Tyutr</span>
+                <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+              </a>              
+            </li>
+
+            <li class="treeview push-menu">
+              <a href="#">
+                <i class="fa fa-user"></i> 
+                <span>Fanlar</span>
+                <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+              </a>              
+            </li>            
+            
+          </ul>
+        </section>
+      </aside>
+
+      <div class="content-wrapper" style="min-height: 868px;">
+        <section class="content-header">
+          <ul class="breadcrumb">
+            <li><a href="#">Asosiy</a></li>
+            <li class="active">Bosh sahifa</li>
+          </ul>    
+        </section>
+        <section class="content">        
+          <div class="row">
+            <div class="col col-md-12">
+              <div class="box box-info">
+                <div class="box-body">
+                  <div class="row">
+
+                      <div class="col-lg-3 col-xs-6">
+                        <!-- small box -->
+                        <div class="small-box items">
+                            <div class="inner">
+                              <h3>&nbsp;</h3>
+
+                              <p>Fakultet</p>
+                            </div>
+                            <div class="icon">
+                              <i class="fa fa-book"></i>
+                            </div>
+                            <a class="small-box-footer" href="#" data-pjax="0"><i class="fa fa-arrow-circle-right"></i> Fakultet</a>
+
+                          </div>
+                      </div>
+
+                      <div class="col-lg-3 col-xs-6">
+                        <!-- small box -->
+                        <div class="small-box items">
+                            <div class="inner">
+                              <h3>&nbsp;</h3>
+
+                              <p>Kafedra</p>
+                            </div>
+                            <div class="icon">
+                              <i class="fa fa-book"></i>
+                            </div>
+                            <a class="small-box-footer" href="#" data-pjax="0"><i class="fa fa-arrow-circle-right"></i> Kafedra</a>
+
+                        </div>
+                      </div>
+
+                      <div class="col-lg-3 col-xs-6">
+                        <!-- small box -->
+                        <div class="small-box items">
+                            <div class="inner">
+                              <h3>&nbsp;</h3>
+
+                              <p>Yo`nalish</p>
+                            </div>
+                            <div class="icon">
+                              <i class="fa fa-book"></i>
+                            </div>
+                            <a class="small-box-footer" href="{% url 'yonalish_list' %}" data-pjax="0">
+                              <i class="fa fa-arrow-circle-right"></i> 
+                              Yo`nalish
+                            </a>
+
+                        </div>
+                      </div>
+
+                      <div class="col-lg-3 col-xs-6">
+                        <!-- small box -->
+                        <div class="small-box items">
+                            <div class="inner">
+                              <h3>&nbsp;</h3>
+
+                              <p>Guruh</p>
+                            </div>
+                            <div class="icon">
+                              <i class="fa fa-book"></i>
+                            </div>
+                            <a class="small-box-footer" href="{% url 'yonalish_list' %}" data-pjax="0">
+                              <i class="fa fa-arrow-circle-right"></i> 
+                              Guruh
+                            </a>
+
+                        </div>
+                      </div>
+
+                      <div class="col-lg-3 col-xs-6">
+                        <!-- small box -->
+                        <div class="small-box items">
+                            <div class="inner">
+                              <h3>&nbsp;</h3>
+                              <p>Tyutr</p>
+                            </div>
+                            <div class="icon">
+                              <i class="fa fa-building-o"></i>
+                            </div>
+                            <a class="small-box-footer" href="#" data-pjax="0"><i class="fa fa-arrow-circle-right"></i> Tyutr</a>                        
+                        </div>
+                      </div>
+
+                      <div class="col-lg-3 col-xs-6">
+                        <!-- small box -->
+                        <div class="small-box items">
+                            <div class="inner">
+                              <h3>&nbsp;</h3>
+                              <p>Fanlar</p>
+                            </div>
+                            <div class="icon">
+                              <i class="fa fa-building-o"></i>
+                            </div>
+                            <a class="small-box-footer" href="#" data-pjax="0"><i class="fa fa-arrow-circle-right"></i> Fanlar</a>                        
+                        </div>
+                      </div>
+
+                  </div>
+                  <!-- /.row -->
+                  <div class="row">
+
+                      <!--pastgi qatordan davom etirish uchun-->
+                                        
+                  </div>
+                  <!-- /.row -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    {% endif %}  
+          
+  {% else %}
+    <div class="alert alert-primary" role="alert">
+      <h3>Platformamadan foydalanish uchun tizimga kirish kerak bo`ladi !</h3>
+    </div>
+  {% endif %}
+{% endblock content %}

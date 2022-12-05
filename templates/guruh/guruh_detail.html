@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        {% if user.username == 'clay' %}
+            <aside class="main-sidebar">
+                <section class="sidebar">
+                <ul class="sidebar-menu tree" >
+                    <li class="treeview ">
+                    <a href="{% url 'guruh_new' %}">
+                        <i class="fa fa-briefcase"></i> 
+                        <span>Yangi kitob kirish</span>
+                        <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                    </a>              
+                    </li>
+
+                    <li class="treeview ">
+                    <a href="{% url 'guruh_list' %}">
+                        <i class="fa fa-users"></i> 
+                        <span>Barcha kitoblar</span>
+                        <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                    </a>              
+                    </li>
+                    
+                </ul>
+                </section>
+            </aside>
+            <div class="content-wrapper" style="min-height: 868px;">          
+                <section class="content">        
+                    <div class="container-fluid">
+                        <div class="card">
+                            <div class="card-body">                            
+                                {{guruh.guruh}} 
+                                {{arm_1.kitob_nomi}} 
+                                <a  class="btn btn-secondary"type="button"  href="{% url 'guruh_edit' guruh.pk %}">Tahrirlash</a>
+                                <a class="btn btn-secondary" type="button"  href="{% url 'guruh_delete' guruh.pk %}">O`chirish</a>                            
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        {% endif %}
+    
+    {% endif %}
+    
+{% endblock content %}

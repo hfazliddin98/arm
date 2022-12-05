@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Kitob kirish{% endblock title %}
+
+{% block content %}
+  {% if user.is_authenticated %}
+    {% if user.username == 'arm_4' or user.lavozimi == 'talaba' %}
+      <aside class="main-sidebar">
+        <section class="sidebar">
+        <ul class="sidebar-menu tree" >
+            <li class="treeview ">
+            <a href="{% url 'arm_4_new' %}">
+                <i class="fa fa-briefcase"></i> 
+                <span>Yangilik kirish</span>
+                <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+            </a>              
+            </li>
+
+            <li class="treeview ">
+            <a href="{% url 'arm_4_list' %}">
+                <i class="fa fa-users"></i> 
+                <span>Barcha yangiliklar</span>
+                <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+            </a>              
+            </li>
+            
+        </ul>
+        </section>
+      </aside>
+      <div class="content-wrapper" style="min-height: 868px;">          
+        <section class="content">        
+          {% for arm_4 in object_list %}
+            <div class="card" >
+              <div class="card-header">
+                <span class="font-weight-bold"><a href="{% url 'arm_4_detail' arm_4.pk %}"><h4>{{arm_4.kitob_nomi|title}}</h4></a></span>               
+                <span class="font-weight-bold">{{ arm.mualif }}</span>
+              </div>           
+            <br>
+            <hr>    
+          
+            </div>
+          {% endfor %} 
+          {% for kali in object_list %}
+            <div class="card" >
+              <div class="card-header">
+                <span class="font-weight-bold"><a href="{% url 'arm_4_detail' arm_4.pk %}"><h4>{{arm_4.kitob_nomi|title}}</h4></a></span>               
+                <span class="font-weight-bold">{{ arm.mualif }}</span>
+              </div>           
+            <br>
+            <hr>    
+          
+            </div>
+          {% endfor %} 
+        </section>
+      </div>
+    {% endif %}
+    {% if user.username == 'arm_3' %}
+      <aside class="main-sidebar">
+        <section class="sidebar">
+        <ul class="sidebar-menu tree" >
+            <li class="treeview ">
+            <a href="{% url 'arm_3_new' %}">
+                <i class="fa fa-briefcase"></i> 
+                <span>Yangi kitob kirish</span>
+                <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+            </a>              
+            </li>
+
+            <li class="treeview ">
+            <a href="{% url 'arm_3_list' %}">
+                <i class="fa fa-users"></i> 
+                <span>Barcha kitoblar</span>
+                <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+            </a>              
+            </li>
+            
+        </ul>
+        </section>
+      </aside>
+      <div class="content-wrapper" style="min-height: 868px;">          
+        <section class="content">        
+          {% for arm_3 in object_list %}
+            <div class="card" >
+              <div class="card-header">
+                <span class="font-weight-bold"><h4>{{arm_3.kitob_nomi|title}}</h4></span>               
+                <span class="font-weight-bold">{{ arm.mualif }}</span>
+              </div>           
+            <br>
+            <hr>    
+          
+            </div>
+          {% endfor %} 
+        </section>
+      </div>
+    {% endif %}
+  {% else %}
+    <aside class="main-sidebar">
+      <section class="sidebar">
+      <ul class="sidebar-menu tree" >
+          <li class="treeview ">
+          <a href="#">
+              <i class="fa fa-briefcase"></i> 
+              <span>Mehmon</span>
+              <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+          </a>              
+          </li>
+
+          <li class="treeview ">
+          <a href="#">
+              <i class="fa fa-users"></i> 
+              <span>Yordam</span>
+              <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+          </a>              
+          </li>
+          
+      </ul>
+      </section>
+    </aside>
+    <div class="content-wrapper" style="min-height: 868px;">          
+      <section class="content">        
+        <h1>Sizda bunday huquq mavjud emas</h1>
+      </section>
+    </div>
+  {% endif %}
+  
+      
+{% endblock content %}

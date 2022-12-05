@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Talaba kirish{% endblock title %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    <aside class="main-sidebar">
+        <section class="sidebar">
+        <ul class="sidebar-menu tree">
+            <li class="">
+                <a href="{% url 'talaba-kitob' %}">
+                    <i class="bi bi-mortarboard-fill"></i>
+                    <span style="padding-left: 30px;">Yangi kitob kiritish</span>
+                    <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+                </a>
+            </li>
+
+            <li class="treeview ">
+                <a href="{% url 'talaba-javob' %}">
+                    <i class="bi bi-mortarboard-fill"></i>
+                    <span style="padding-left: 30px;">Barcha kitoblar</span>
+                    <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+                </a>
+            </li>
+
+        </ul>
+        </section>
+    </aside>
+    <div class="content-wrapper" style="min-height: 868px;">
+        <section class="content">
+          <h2>Yangi kitob kiritish </h2>
+          <table class="ui definition table">
+            <tbody>
+          
+              {% for javob in javob_list %}
+                <tr>
+                  <td>{{ javob.invertor }}</td>
+                  <td>{{ javob.familya }}</td>
+                  <td>{{ javob.ism }}</td>
+                  <td>{{ javob.kitob }}</td>
+                  <td>
+                    <div style='float:ringht;' class="ui toggle checkbox">
+                      <input type="checkbox" name="public">
+                      <label>Subscribe to weekly newsletter</label>
+                    </div>
+                  </td>
+                </tr>
+              {% endfor %}
+
+            </tbody>
+          </table>
+
+        </section>
+    </div>
+{% endif %}
+
+
+
+
+{% endblock content %}

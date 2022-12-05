@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Kitob kirish{% endblock title %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        {% if user.lavozimi == 'talaba' %}
+            <aside class="main-sidebar">
+                <section class="sidebar">
+                <ul class="sidebar-menu tree" >
+                    <li class="treeview ">
+                    <a href="{% url 'yangilik' %}">
+                        <i class="bi bi-mortarboard-fill"></i> 
+                        <span style="padding-left: 30px;">Yangiliklar</span>
+                        <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+                    </a>          
+                    </li>
+                    <li class="treeview ">
+                    <a href="{% url 'barcha' %}">
+                        <i class="bi bi-mortarboard-fill"></i> 
+                        <span style="padding-left: 30px;">Barcha kitoblar</span>
+                        <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+                    </a>                    
+                    </li>
+                    <li class="treeview ">
+                    <a href="{% url 'buyurtma' %}">
+                        <i class="bi bi-mortarboard-fill"></i> 
+                        <span style="padding-left: 30px;">Kitob buyurtma</span>
+                        <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+                    </a>                    
+                    </li>      
+                    <li class="treeview ">
+                    <a href="{% url 'olgan_kitob' %}">
+                        <i class="bi bi-mortarboard-fill"></i> 
+                        <span style="padding-left: 30px;">Olgan kitoblar</span>
+                        <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+                    </a>                    
+                    </li>                                      
+                </ul>
+                </section>
+            </aside>
+
+
+            <div class="content-wrapper" style="min-height: 600px;">          
+                <section class="content">         
+                          
+                  <h1>Hozirda bu sahifa ustida ishlanmoqda....</h1>          
+                  
+                </section>
+              </div>
+          
+               
+        {% endif %}
+    {% endif %}
+
+{% endblock content %}

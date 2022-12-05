@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Kitob kirish{% endblock title %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+      {% if user.lavozimi == 'talaba' %}
+        <aside class="main-sidebar">
+          <section class="sidebar">
+            <ul class="sidebar-menu tree" >
+              <li class="treeview ">
+                <a href="{% url 'yangilik' %}">
+                  <i class="bi bi-mortarboard-fill"></i> 
+                  <span style="padding-left: 30px;">Yangiliklar</span>
+                  <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+                </a>          
+              </li>
+              <li class="treeview ">
+                <a href="{% url 'barcha' %}">
+                  <i class="bi bi-mortarboard-fill"></i> 
+                  <span style="padding-left: 30px;">Barcha kitoblar</span>
+                  <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+                </a>                    
+              </li>
+              <li class="treeview ">
+                <a href="{% url 'buyurtma' %}">
+                  <i class="bi bi-mortarboard-fill"></i> 
+                  <span style="padding-left: 30px;">Kitob buyurtma</span>
+                  <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+                </a>                    
+              </li>      
+              <li class="treeview ">
+                <a href="{% url 'olgan_kitob' %}">
+                  <i class="bi bi-mortarboard-fill"></i> 
+                  <span style="padding-left: 30px;">Olgan kitoblar</span>
+                  <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+                </a>                    
+              </li>                                      
+            </ul>
+          </section>
+        </aside>
+          <div class="content-wrapper" style="min-height: 600px;">          
+            <section class="content">         
+                      
+              <table class="ui celled striped table">
+                <thead>
+                  <tr>         
+                    <!--qatori hisobga olinsin-->
+                    <th colspan="1"> №</th>
+                    <th colspan="1">Familya</th>
+                    <th colspan="1">Ism    </th>
+                    <th colspan="1">Sharifi </th>
+                    <th colspan="1">Fakultet</th>
+                    <th colspan="1">Yo`nalish</th>
+                    <th colspan="1">Kurs</th>
+                    <th colspan="1">Guruh</th>
+                    <th colspan="1">Raqami </th>
+                    <th colspan="1">Sanasi</th>
+                    <th colspan="1"></th>      
+                  </tr>
+                </thead>  
+              
+                {% for arm_2 in object_list %}
+    
+                  <tbody>
+                    <tr>
+                      <!--qatori hisobga olinsin-->
+                      <td class="right aligned collapsing">{{arm_2.formulyar_raqami}}</td>                  
+                      <td class="right aligned collapsing">{{arm_2.familya|title}}</td>
+                      <td class="right aligned collapsing">{{arm_2.ism|title}}</td>
+                      <td class="right aligned collapsing">{{arm_2.sharifi|title}}</td>
+                      <td class="right aligned collapsing">{{arm_2.fakultet|title}}</td>
+                      <td class="right aligned collapsing">{{arm_2.yonalish|title}}</td>
+                      <td class="right aligned collapsing">{{arm_2.kurs}}</td>
+                      <td class="right aligned collapsing">{{arm_2.guruh}}</td>
+                      <td class="right aligned collapsing">{{arm_2.tel_raqami}}</td>
+                      <td class="right aligned collapsing">{{arm_2.sana}}</td>
+                      <td class="right aligned collapsing"><a href="{% url 'arm_2_detail' arm_2.pk %}">Ko`rish</a></td>                               
+                    </tr>
+                  </tbody>
+    
+                {% endfor %}
+              </table>                
+              
+            </section>
+          </div>
+               
+      {% endif %}
+    {% endif %}
+
+{% endblock content %}

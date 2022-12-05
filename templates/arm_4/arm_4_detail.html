@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        {% if user.username == 'arm_4' %}
+            <aside class="main-sidebar">
+                <section class="sidebar">
+                <ul class="sidebar-menu tree" >
+                    <li class="treeview ">
+                    <a href="{% url 'arm_4_new' %}">
+                        <i class="fa fa-briefcase"></i> 
+                        <span>Yangilik kirish</span>
+                        <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                    </a>              
+                    </li>
+
+                    <li class="treeview ">
+                    <a href="{% url 'arm_4_list' %}">
+                        <i class="fa fa-users"></i> 
+                        <span>Barcha yangiliklar</span>
+                        <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                    </a>              
+                    </li>
+                    
+                </ul>
+                </section>
+            </aside>
+            <div class="content-wrapper" style="min-height: 868px;">          
+                <section class="content">        
+                    <div class="container-fluid">
+                        <div class="card">
+                            <div class="card-body">                            
+                                {{arm_4.yangilik_nomi}} 
+                                {{arm_4.yangilik_nomi}} 
+                                <a  class="btn btn-secondary"type="button"  href="{% url 'arm_4_edit' arm_4.pk %}">Tahrirlash</a>
+                                <a class="btn btn-secondary" type="button"  href="{% url 'arm_4_delete' arm_4.pk %}">O`chirish</a>                            
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        {% endif %}
+    {% else %}
+        <aside class="main-sidebar">
+        <section class="sidebar">
+        <ul class="sidebar-menu tree" >
+            <li class="treeview ">
+            <a href="#">
+                <i class="fa fa-briefcase"></i> 
+                <span>Mehmon</span>
+                <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+            </a>              
+            </li>
+
+            <li class="treeview ">
+            <a href="#">
+                <i class="fa fa-users"></i> 
+                <span>Yordam</span>
+                <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+            </a>              
+            </li>
+            
+        </ul>
+        </section>
+        </aside>
+        <div class="content-wrapper" style="min-height: 868px;">          
+        <section class="content">        
+            <h1>Sizda bunday huquq mavjud emas</h1>
+        </section>
+        </div>
+    {% endif %}
+    
+{% endblock content %}

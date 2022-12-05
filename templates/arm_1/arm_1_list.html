@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Kitob kirish{% endblock title %}
+
+{% block content %}
+  {% if user.is_authenticated %}
+    {% if user.username == 'clay' %}
+      <nav class="navbar navbar-expand-lg bg-light">
+        <center>
+          <ul class="sidebar-menu tree" >
+            <li class="treeview ">
+            <a href="{% url 'arm_1_new' %}">
+              <i class="bi bi-book-half"></i>
+                <span style="padding-left: 30px;">Yangi kitob kirish</span>
+                <span class="pull-right-container"><i class="bi bi-book-half"></i></span>
+            </a>              
+            </li>
+
+            <li class="treeview ">
+            <a href="{% url 'arm_1_list' %}">
+              <i class="bi bi-book-half"></i>
+                <span style="padding-left: 30px;">Barcha kitoblar</span>
+                <span class="pull-right-container"><i class="bi bi-book-half"></i></span>
+            </a>              
+            </li>
+            
+        </ul>
+        </center>
+      </nav>
+      <aside class="main-sidebar">
+        <section class="sidebar">
+        
+        </section>
+      </aside>
+      <div class="content-wrapper" style="min-height: 868px;">          
+        <section class="content"> 
+          
+          <table class="ui celled striped table">
+            <thead>
+              <tr>         
+                <!--qatori hisobga olinsin-->
+                <th colspan="1"> №</th>
+                <th class="right aligned collapsing" colspan="1">Kitob nomi</th>
+                <th colspan="1">Nashriyot</th>
+                <th class="right aligned collapsing" colspan="1">Nashir yili </th>
+                <th colspan="1">Darslik turi</th>
+                <th colspan="1">Nashriyot</th>
+                <th colspan="1">Shifr</th>
+                <th colspan="1">ISBN</th>
+                <th colspan="1">Tili</th>
+                <th colspan="1">Sanai</th>
+                <th colspan="1"></th>      
+              </tr>
+            </thead>  
+          
+            {% for arm_1 in object_list %}
+
+              <tbody>
+                <tr>
+                  <!--qatori hisobga olinsin-->
+                  <td class="right aligned collapsing">{{arm_1.invertor_nomeri}}</td>                  
+                  <td class="right aligned collapsing">{{arm_1.kitob_nomi|title}}</td>
+                  <td class="right aligned collapsing">{{arm_1.nashriyot|title}}</td>
+                  <td class="right aligned collapsing">{{arm_1.nashr_yili|title}}</td>
+                  <td class="right aligned collapsing">{{arm_1.darslik_turi|title}}</td>
+                  <td class="right aligned collapsing">{{arm_1.nashriyot|title}}</td>
+                  <td class="right aligned collapsing">{{arm_1.shifr}}</td>
+                  <td class="right aligned collapsing">{{arm_1.isbn}}</td>
+                  <td class="right aligned collapsing">{{arm_1.tili}}</td>
+                  <td class="right aligned collapsing">{{arm_1.sana}}</td>
+                  <td class="right aligned collapsing"><a href="{% url 'arm_1_detail' arm_1.pk %}">Ko`rish</a></td>                               
+                </tr>
+              </tbody>
+
+            {% endfor %}
+          </table>  
+          
+                
+           
+        </section>
+      </div>
+    {% endif %}
+
+    {% if user.username == 'arm_1' %}
+      <aside class="main-sidebar">
+        <section class="sidebar">
+        <ul class="sidebar-menu tree" >
+            <li class="treeview ">
+            <a href="{% url 'arm_1_new' %}">
+              <i class="bi bi-book-half"></i>
+                <span style="padding-left: 30px;">Yangi kitob kirish</span>
+                <span class="pull-right-container"><i class="bi bi-book-half"></i></span>
+            </a>              
+            </li>
+
+            <li class="treeview ">
+            <a href="{% url 'arm_1_list' %}">
+              <i class="bi bi-book-half"></i>
+                <span style="padding-left: 30px;">Barcha kitoblar</span>
+                <span class="pull-right-container"><i class="bi bi-book-half"></i></span>
+            </a>              
+            </li>
+            
+        </ul>
+        </section>
+      </aside>
+      <div class="content-wrapper" style="min-height: 600px;">          
+        <section class="content"> 
+                 
+          <table class="ui celled striped table">
+            <thead>
+              <tr>         
+                <!--qatori hisobga olinsin-->
+                <th colspan="1"> №</th>
+                <th class="right aligned collapsing" colspan="1">Kitob nomi</th>
+                <th colspan="1">Nashriyot</th>
+                <th class="right aligned collapsing" colspan="1">Nashir yili </th>
+                <th colspan="1">Darslik turi</th>
+                <th colspan="1">Nashriyot</th>
+                <th colspan="1">Shifr</th>
+                <th colspan="1">ISBN</th>
+                <th colspan="1">Tili</th>
+                <th colspan="1">Sanai</th>
+                      
+              </tr>
+            </thead>  
+          
+            {% for arm_1 in object_list %}
+
+              <tbody>
+                <tr>
+                  <!--qatori hisobga olinsin-->
+                  <td class="right aligned collapsing">{{arm_1.invertor_nomeri}}</td>                  
+                  <td class="right aligned collapsing">{{arm_1.kitob_nomi|title}}</td>
+                  <td class="right aligned collapsing">{{arm_1.nashriyot|title}}</td>
+                  <td class="right aligned collapsing">{{arm_1.nashr_yili|title}}</td>
+                  <td class="right aligned collapsing">{{arm_1.darslik_turi|title}}</td>
+                  <td class="right aligned collapsing">{{arm_1.nashriyot|title}}</td>
+                  <td class="right aligned collapsing">{{arm_1.shifr}}</td>
+                  <td class="right aligned collapsing">{{arm_1.isbn}}</td>
+                  <td class="right aligned collapsing">{{arm_1.tili}}</td>
+                  <td class="right aligned collapsing">{{arm_1.sana}}</td>
+                                              
+                </tr>
+              </tbody>
+
+            {% endfor %}
+          </table>  
+          
+        </section>
+      </div>
+    {% endif %}  
+    
+  {% endif %}
+  
+  
+      
+{% endblock content %}

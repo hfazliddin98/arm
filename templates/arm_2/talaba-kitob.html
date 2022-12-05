@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Talaba kirish{% endblock title %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    <aside class="main-sidebar">
+        <section class="sidebar">
+        <ul class="sidebar-menu tree">
+            <li class="">
+                <a href="{% url 'talaba-kitob' %}">
+                    <i class="bi bi-mortarboard-fill"></i>
+                    <span style="padding-left: 30px;">Yangi kitob kiritish</span>
+                    <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+                </a>
+            </li>
+
+            <li class="treeview ">
+                <a href="{% url 'arm_2_list' %}">
+                    <i class="bi bi-mortarboard-fill"></i>
+                    <span style="padding-left: 30px;">Barcha talabalar</span>
+                    <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></i></span>
+                </a>
+            </li>
+
+        </ul>
+        </section>
+    </aside>
+    <div class="content-wrapper" style="min-height: 868px;">
+        <section class="content">
+          <h2>Yangi kitob kiritish </h2>
+          {% if submitted %}
+              Yangi kitob qo`shildi !!!
+          {% else %}
+              <form action="" method=POST >
+                  {% csrf_token %}
+                  <!-- kitob viewsdagi new_kitob request nomi boyicha kelyapti -->
+                  {{ talaba.as_p }}
+
+                  <br>
+                  <input class="btn btn-primary" type="submit" value="Saqlash">
+              </form>
+          {% endif %}
+        </section>
+    </div>
+{% endif %}
+
+
+
+
+{% endblock content %}

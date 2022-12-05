@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+
+{% block title %}familiya kirish{% endblock title %}
+
+{% block content %}
+  {% if user.is_authenticated %}
+    {% if user.username == 'clay' %}
+      <aside class="main-sidebar">
+        <section class="sidebar">
+        <ul class="sidebar-menu tree" >
+            <li class="treeview ">
+            <a href="{% url 'familiya_new' %}">
+                <i class="fa fa-briefcase"></i> 
+                <span>Yangi familiya kirish</span>
+                <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+            </a>              
+            </li>
+
+            <li class="treeview ">
+            <a href="{% url 'familiya_list' %}">
+                <i class="fa fa-users"></i> 
+                <span>Barcha familiyalar</span>
+                <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+            </a>              
+            </li>
+            
+        </ul>
+        </section>
+      </aside>
+      <div class="content-wrapper" style="min-height: 868px;">          
+        <section class="content">        
+          {% for familiya in object_list %}
+            <div class="card" >
+              <div class="card-header">
+                <span class="font-weight-bold"><a href="{% url 'familiya_detail' familiya.pk %}"><h4>{{familiya.familiya|title}}</h4></a></span>               
+                <span class="font-weight-bold">{{ arm.mualif }}</span>
+              </div>           
+            <br>
+            <hr>    
+          
+            </div>
+          {% endfor %} 
+        </section>
+      </div>
+    {% endif %}    
+  
+  {% endif %}
+  
+      
+{% endblock content %}

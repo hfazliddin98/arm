@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}Kirish{% endblock title %}
+{% block content %}
+
+    <div style="margin: 2%; height: 100%;">
+        <form method="POST">
+            {% csrf_token %}
+            <img class="ui medium circular image" src="{% static '/logo/arm.jpg' %}">
+            <h4 class="login-box-msg">Qo‘qon davlat pedagogika instituti</h4>
+            <h5 class="login-box-msg">ARM kutubxona axborot tizimi</h5>
+            <div style="margin: 0 6%;" class="mb-3">
+                {{form|crispy}}
+            </div>        
+            <button type="submit" class="btn btn-primary">Kirish</button>
+            <!-- <a role="button" type="button" class="btn btn-secondary" href="{% url 'password_reset' %}">Kalit so`zni tiklash</a> -->
+        </form>
+    </div>    
+    
+{% endblock content %}

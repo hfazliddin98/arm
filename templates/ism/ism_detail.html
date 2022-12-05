@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        {% if user.username == 'clay' %}
+            <aside class="main-sidebar">
+                <section class="sidebar">
+                <ul class="sidebar-menu tree" >
+                    <li class="treeview ">
+                    <a href="{% url 'ism_new' %}">
+                        <i class="fa fa-briefcase"></i> 
+                        <span>Yangi ism kirish</span>
+                        <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                    </a>              
+                    </li>
+
+                    <li class="treeview ">
+                    <a href="{% url 'ism_list' %}">
+                        <i class="fa fa-users"></i> 
+                        <span>Barcha ismlar</span>
+                        <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                    </a>              
+                    </li>
+                    
+                </ul>
+                </section>
+            </aside>
+            <div class="content-wrapper" style="min-height: 868px;">          
+                <section class="content">        
+                    <div class="container-fluid">
+                        <div class="card">
+                            <div class="card-body">                            
+                                {{ism.ism}} 
+                                {{arm_1.ism_nomi}} 
+                                <a  class="btn btn-secondary"type="button"  href="{% url 'ism_edit' ism.pk %}">Tahrirlash</a>
+                                <a class="btn btn-secondary" type="button"  href="{% url 'ism_delete' ism.pk %}">O`chirish</a>                            
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        {% endif %}
+    
+    {% endif %}
+    
+{% endblock content %}

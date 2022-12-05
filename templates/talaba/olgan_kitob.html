@@ -1,0 +1,351 @@
+{% extends 'base.html' %} 
+{% block title %}Bosh sahifa{% endblock title %} 
+{% block content %} 
+    {% if user.is_authenticated %} 
+        {% if user.username == 'clay' %}
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                <ul class="sidebar-menu tree">
+                    <li class="treeview ">
+                        <a href="{% url 'yangilik' %}">
+                            <i class="bi bi-mortarboard-fill"></i>
+                            <span style="padding-left: 30px;">Yangiliklar</span>
+                            <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                        </a>
+                    </li>
+
+                    <li class="treeview ">
+                        <a href="#">
+                            <i class="bi bi-mortarboard-fill"></i>
+                            <span style="padding-left: 30px;">Qarizdorliklar</span>
+                            <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                        </a>
+                    </li>
+
+                </ul>
+            </section>
+        </aside>
+
+        <div class="content-wrapper" style="min-height: 868px;">
+            <section class="content-header">
+                <ul class="breadcrumb">
+                    <li><a href="#">Asosiy</a></li>
+                    <li class="active">Bosh sahifa</li>
+                </ul>
+            </section>
+            <section class="content">
+                <div class="row">
+                    <div class="col col-md-12">
+                        <div class="box box-info">
+                            <div class="box-body">
+                                <div class="row">
+
+                                    <div class="col-lg-3 col-xs-6">
+                                        <!-- small box -->
+                                        <div class="small-box items">
+                                            <div class="inner">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" class="bi bi-mortarboard-fill" viewBox="0 0 16 16">
+                                        <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5Z"/>
+                                        <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Z"/>
+                                    </svg>
+
+                                                <h4>Yangiliklar</h4>
+                                            </div>
+
+                                            <a class="small-box-footer" href="#" data-pjax="0">
+                                                <i class="bi bi-mortarboard-fill"></i> Yangiliklar
+                                            </a>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-xs-6">
+                                        <!-- small box -->
+                                        <div class="small-box items">
+                                            <div class="inner">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" class="bi bi-mortarboard-fill" viewBox="0 0 16 16">
+                                        <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5Z"/>
+                                        <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Z"/>
+                                    </svg>
+
+                                                <h4>Qarizdorliklar</h4>
+                                            </div>
+
+                                            <a class="small-box-footer" href="#" data-pjax="0">
+                                                <i class="bi bi-mortarboard-fill"></i> Qarizdorliklar
+                                            </a>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        {% endif %}
+        
+        
+
+        {% if user.familya == 'Yodgorov' %}
+            <aside class="main-sidebar">
+                <section class="sidebar">
+                <ul class="sidebar-menu tree" >
+                    <li class="treeview ">
+                    <a href="{% url 'yangilik' %}">
+                        <i class="bi bi-mortarboard-fill"></i> 
+                        <span style="padding-left: 30px;">Yangiliklar</span>
+                        <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+                    </a>          
+                    </li>
+                    <li class="treeview ">
+                    <a href="{% url 'barcha' %}">
+                        <i class="bi bi-mortarboard-fill"></i> 
+                        <span style="padding-left: 30px;">Barcha kitoblar</span>
+                        <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+                    </a>                    
+                    </li>
+                    <li class="treeview ">
+                    <a href="{% url 'buyurtma' %}">
+                        <i class="bi bi-mortarboard-fill"></i> 
+                        <span style="padding-left: 30px;">Kitob buyurtma</span>
+                        <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+                    </a>                    
+                    </li>      
+                    <li class="treeview ">
+                    <a href="{% url 'olgan_kitob' %}">
+                        <i class="bi bi-mortarboard-fill"></i> 
+                        <span style="padding-left: 30px;">Olgan kitoblar</span>
+                        <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+                    </a>                    
+                    </li>                                      
+                </ul>
+                </section>
+            </aside>
+            <div class="content-wrapper" style="min-height: 600px;">
+                <section class="content">
+
+                    <table style="width: 90%;" class="ui celled striped table">
+                        <thead>
+                            <tr>
+                                <!--qatori hisobga olinsin-->
+                                <th colspan="1"> №</th>
+                                <th colspan="1">Familya</th>
+                                <th colspan="1">Ism </th>
+                                <th colspan="1">Sharifi </th>
+                                <th colspan="1">Fakultet</th>
+                                <th colspan="1">Yo`nalish</th>
+                                <th colspan="1">Kurs</th>
+                                <th colspan="1">Guruh</th>
+                                <th colspan="1">Raqami </th>
+                                <th colspan="1">{{ kitob.id }}</th>
+                                <th colspan="1">{{ er }}</th>
+                            </tr>
+                        </thead>
+
+
+                        {% for talaba in kitob %}
+
+                        <tbody>
+                            <tr>
+                                <!--qatori hisobga olinsin-->
+                                <td class="right aligned collapsing">{{ talaba.formulyar_raqami}}</td>
+                                <td class="right aligned collapsing">{{ talaba.familya }}</td>
+                                <td class="right aligned collapsing">{{ talaba.ism}}</td>
+                                <td class="right aligned collapsing">{{ talaba.sharifi}}</td>
+                                <td class="right aligned collapsing">{{ talaba.fakultet}}</td>
+                                <td class="right aligned collapsing">{{ talaba.yonalish}}</td>
+                                <td class="right aligned collapsing">{{ talaba.kurs}}</td>
+                                <td class="right aligned collapsing">{{ talaba.guruh}}</td>
+                                <td class="right aligned collapsing">{{ talaba.tel_raqami}}</td>
+                                <td class="right aligned collapsing">{{ talaba }}</td>
+                                <td class="right aligned collapsing"> </td>
+                            </tr>
+                        </tbody>
+
+                        {% endfor %}
+                    </table>
+
+                </section>
+            </div>
+        {% endif %} 
+
+
+
+
+        {% if user.familya == 'Hatamov' %}
+            <aside class="main-sidebar">
+                <section class="sidebar">
+                <ul class="sidebar-menu tree" >
+                    <li class="treeview ">
+                    <a href="{% url 'yangilik' %}">
+                        <i class="bi bi-mortarboard-fill"></i> 
+                        <span style="padding-left: 30px;">Yangiliklar</span>
+                        <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+                    </a>          
+                    </li>
+                    <li class="treeview ">
+                    <a href="{% url 'barcha' %}">
+                        <i class="bi bi-mortarboard-fill"></i> 
+                        <span style="padding-left: 30px;">Barcha kitoblar</span>
+                        <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+                    </a>                    
+                    </li>
+                    <li class="treeview ">
+                    <a href="{% url 'buyurtma' %}">
+                        <i class="bi bi-mortarboard-fill"></i> 
+                        <span style="padding-left: 30px;">Kitob buyurtma</span>
+                        <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+                    </a>                    
+                    </li>      
+                    <li class="treeview ">
+                    <a href="{% url 'olgan_kitob' %}">
+                        <i class="bi bi-mortarboard-fill"></i> 
+                        <span style="padding-left: 30px;">Olgan kitoblar</span>
+                        <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+                    </a>                    
+                    </li>                                      
+                </ul>
+                </section>
+            </aside>
+            <div class="content-wrapper" style="min-height: 600px;">
+                <section class="content">
+
+                    <table style="width: 90%;" class="ui celled striped table">
+                        <thead>
+                            <tr>
+                                <!--qatori hisobga olinsin-->
+                                <th colspan="1"> №</th>
+                                <th colspan="1">Familya</th>
+                                <th colspan="1">Ism </th>
+                                <th colspan="1">Sharifi </th>
+                                <th colspan="1">Fakultet</th>
+                                <th colspan="1">Yo`nalish</th>
+                                <th colspan="1">Kurs</th>
+                                <th colspan="1">Guruh</th>
+                                <th colspan="1">Raqami </th>
+                                <th colspan="1">{{ kitob.id }}</th>
+                                <th colspan="1">{{ er }}</th>
+                            </tr>
+                        </thead>
+
+
+                        {% for talaba in kitob %}
+
+                        <tbody>
+                            <tr>
+                                <!--qatori hisobga olinsin-->
+                                <td class="right aligned collapsing">{{ talaba.formulyar_raqami}}</td>
+                                <td class="right aligned collapsing">{{ talaba.familya }}</td>
+                                <td class="right aligned collapsing">{{ talaba.ism}}</td>
+                                <td class="right aligned collapsing">{{ talaba.sharifi}}</td>
+                                <td class="right aligned collapsing">{{ talaba.fakultet}}</td>
+                                <td class="right aligned collapsing">{{ talaba.yonalish}}</td>
+                                <td class="right aligned collapsing">{{ talaba.kurs}}</td>
+                                <td class="right aligned collapsing">{{ talaba.guruh}}</td>
+                                <td class="right aligned collapsing">{{ talaba.tel_raqami}}</td>
+                                <td class="right aligned collapsing">{{ talaba }}</td>
+                                <td class="right aligned collapsing"> </td>
+                            </tr>
+                        </tbody>
+
+                        {% endfor %}
+                    </table>
+
+                </section>
+            </div>
+
+        {% endif %} 
+
+
+
+
+
+        {% if user.lavozimi == 'talaba' %}
+        <aside class="main-sidebar">
+            <section class="sidebar">
+              <ul class="sidebar-menu tree" >
+                <li class="treeview ">
+                  <a href="{% url 'yangilik' %}">
+                    <i class="bi bi-mortarboard-fill"></i> 
+                    <span style="padding-left: 30px;">Yangiliklar</span>
+                    <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+                  </a>          
+                </li>
+                <li class="treeview ">
+                  <a href="{% url 'barcha' %}">
+                    <i class="bi bi-mortarboard-fill"></i> 
+                    <span style="padding-left: 30px;">Barcha kitoblar</span>
+                    <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+                  </a>                    
+                </li>
+                <li class="treeview ">
+                  <a href="{% url 'buyurtma' %}">
+                    <i class="bi bi-mortarboard-fill"></i> 
+                    <span style="padding-left: 30px;">Kitob buyurtma</span>
+                    <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+                  </a>                    
+                </li>      
+                <li class="treeview ">
+                  <a href="{% url 'olgan_kitob' %}">
+                    <i class="bi bi-mortarboard-fill"></i> 
+                    <span style="padding-left: 30px;">Olgan kitoblar</span>
+                    <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+                  </a>                    
+                </li>                                      
+              </ul>
+            </section>
+          </aside>
+        <div class="content-wrapper" style="min-height: 600px;">
+            <section class="content">
+
+                <table style="width: 90%;" class="ui celled striped table">
+                    <thead>
+                        <tr>
+                            <!--qatori hisobga olinsin-->
+                            <th colspan="1"> №</th>
+                            <th colspan="1">Familya</th>
+                            <th colspan="1">Ism </th>
+                            <th colspan="1">Sharifi </th>
+                            <th colspan="1">Fakultet</th>
+                            <th colspan="1">Yo`nalish</th>
+                            <th colspan="1">Kurs</th>
+                            <th colspan="1">Guruh</th>
+                            <th colspan="1">Raqami </th>
+                            <th colspan="1">{{ kitob.id }}</th>
+                            <th colspan="1">{{ er }}</th>
+                        </tr>
+                    </thead>
+
+
+                    {% for talaba in kitob %}
+
+                    <tbody>
+                        <tr>
+                            <!--qatori hisobga olinsin-->
+                            <td class="right aligned collapsing">{{ talaba.formulyar_raqami}}</td>
+                            <td class="right aligned collapsing">{{ talaba.familya }}</td>
+                            <td class="right aligned collapsing">{{ talaba.ism}}</td>
+                            <td class="right aligned collapsing">{{ talaba.sharifi}}</td>
+                            <td class="right aligned collapsing">{{ talaba.fakultet}}</td>
+                            <td class="right aligned collapsing">{{ talaba.yonalish}}</td>
+                            <td class="right aligned collapsing">{{ talaba.kurs}}</td>
+                            <td class="right aligned collapsing">{{ talaba.guruh}}</td>
+                            <td class="right aligned collapsing">{{ talaba.tel_raqami}}</td>
+                            <td class="right aligned collapsing">{{ talaba }}</td>
+                            <td class="right aligned collapsing"> </td>
+                        </tr>
+                    </tbody>
+
+                    {% endfor %}
+                </table>
+
+            </section>
+        </div>
+        {% endif %}
+    {% endif %} 
+{% endblock content %}

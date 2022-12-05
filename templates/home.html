@@ -1,0 +1,541 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Bosh sahifa{% endblock title %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+  {% if user.username == 'clay' %}
+    <div class="row row-cols-1  row-cols-md-3 g-4" style="margin: 1%;height: 200%;">
+      <div class="col">
+        <div class="card " >
+          <center style="margin: 2%;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20%" height="20%" fill="currentColor" class="bi bi-book-half" viewBox="0 0 16 16">
+              <path d="M8.5 2.687c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+            </svg>
+            <div class="card-body">              
+              <h1 class="card-title">ARM</h1>              
+            </div>
+            <div class="card-footer bg-transparent border-success">
+              <a class="nav-link active" aria-current="page" href="{% url 'arm' %}">
+                <i class="bi bi-book-half"></i>
+                ARM
+              </a>
+            </div>
+          </center>          
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <center style="margin: 2%;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20%" height="20%" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+              <path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+            </svg>
+            <div class="card-body">              
+              <h1 class="card-title">Dekanat</h1>              
+            </div>
+            <div class="card-footer bg-transparent border-success">
+              <a class="nav-link active" aria-current="page" href="{% url 'dekanat' %}">
+                <i class="bi bi-book-half"></i>
+                Dekanat
+              </a>
+            </div>
+          </center>          
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <center style="margin: 2%;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20%" height="20%" fill="currentColor" class="bi bi-mortarboard-fill" viewBox="0 0 16 16">
+              <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5Z"/>
+              <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Z"/>
+            </svg>
+            <div class="card-body">              
+              <h1 class="card-title">Talaba</h1>              
+            </div>
+            <div class="card-footer bg-transparent border-success">
+              <a class="nav-link active" aria-current="page" href="{% url 'talaba' %}">
+                <i class="bi bi-book-half"></i>
+                Talaba
+              </a>
+            </div>
+          </center>          
+        </div>
+      </div>      
+    </div>    
+    
+  {% endif %}
+  
+  {% if user.arm_bolim == 'arm-1' %}
+    <div class="row row-cols-1  row-cols-md-3 g-4" style="margin: 1%;height: 200%;">
+      <div class="col">
+        <div class="card " >
+          <center style="margin: 2%;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20%" height="20%" fill="currentColor" class="bi bi-mortarboard-fill" viewBox="0 0 16 16">
+              <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5Z"/>
+              <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Z"/>
+            </svg>
+            <div class="card-body">              
+              <h1 class="card-title">Yangi kitob kiritish</h1>              
+            </div>
+            <div class="card-footer bg-transparent border-success">
+              <a class="nav-link active" aria-current="page" href="{% url 'arm_1_new' %}">
+                <i class="bi bi-book-half"></i>
+                Yangi kitob kiritish
+              </a>
+            </div>
+          </center>          
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <center style="margin: 2%;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20%" height="20%" fill="currentColor" class="bi bi-mortarboard-fill" viewBox="0 0 16 16">
+              <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5Z"/>
+              <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Z"/>
+            </svg>
+            <div class="card-body">              
+              <h1 class="card-title">Barcha kitoblar</h1>              
+            </div>
+            <div class="card-footer bg-transparent border-success">
+              <a class="nav-link active" aria-current="page" href="{% url 'arm_1_list' %}">
+                <i class="bi bi-book-half"></i>
+                Barcha kitoblar
+              </a>
+            </div>
+          </center>          
+        </div>
+      </div>          
+    </div>   
+  {% endif %} 
+
+  {% if user.arm_bolim == 'arm-2' %}
+    <div class="row row-cols-1  row-cols-md-3 g-4" style="margin: 1%;height: 200%;">
+      <div class="col">
+        <div class="card " >
+          <center style="margin: 2%;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20%" height="20%" fill="currentColor" class="bi bi-mortarboard-fill" viewBox="0 0 16 16">
+              <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5Z"/>
+              <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Z"/>
+            </svg>
+            <div class="card-body">              
+              <h1 class="card-title">Yangi talaba kiritish</h1>              
+            </div>
+            <div class="card-footer bg-transparent border-success">
+              <a class="nav-link active" aria-current="page" href="{% url 'arm_2_new' %}">
+                <i class="bi bi-book-half"></i>
+                Yangi talaba kiritish
+              </a>
+            </div>
+          </center>          
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <center style="margin: 2%;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20%" height="20%" fill="currentColor" class="bi bi-mortarboard-fill" viewBox="0 0 16 16">
+              <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5Z"/>
+              <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Z"/>
+            </svg>
+            <div class="card-body">              
+              <h1 class="card-title">Barcha talabalar</h1>              
+            </div>
+            <div class="card-footer bg-transparent border-success">
+              <a class="nav-link active" aria-current="page" href="{% url 'arm_2_list' %}">
+                <i class="bi bi-book-half"></i>
+                Barcha talabalar
+              </a>
+            </div>
+          </center>          
+        </div>
+      </div>          
+    </div> 
+    
+    
+  {% endif %} 
+
+  {% if user.arm_bolim == 'arm-3' %}
+    <div class="row row-cols-1  row-cols-md-3 g-4" style="margin: 1%;height: 200%;">
+      <div class="col">
+        <div class="card " >
+          <center style="margin: 2%;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20%" height="20%" fill="currentColor" class="bi bi-mortarboard-fill" viewBox="0 0 16 16">
+              <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5Z"/>
+              <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Z"/>
+            </svg>
+            <div class="card-body">              
+              <h1 class="card-title">Yangi kitob kiritish</h1>              
+            </div>
+            <div class="card-footer bg-transparent border-success">
+              <a class="nav-link active" aria-current="page" href="{% url 'arm_3_new' %}">
+                <i class="bi bi-book-half"></i>
+                Yangi kitob kiritish
+              </a>
+            </div>
+          </center>          
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <center style="margin: 2%;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20%" height="20%" fill="currentColor" class="bi bi-mortarboard-fill" viewBox="0 0 16 16">
+              <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5Z"/>
+              <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Z"/>
+            </svg>
+            <div class="card-body">              
+              <h1 class="card-title">Barcha kitoblar</h1>              
+            </div>
+            <div class="card-footer bg-transparent border-success">
+              <a class="nav-link active" aria-current="page" href="{% url 'arm_3_list' %}">
+                <i class="bi bi-book-half"></i>
+                Barcha kitoblar
+              </a>
+            </div>
+          </center>          
+        </div>
+      </div>          
+    </div>    
+  {% endif %} 
+
+  {% if user.arm_bolim == 'arm-4' %}
+    <div class="row row-cols-1  row-cols-md-3 g-4" style="margin: 1%;height: 200%;">
+      <div class="col">
+        <div class="card " >
+          <center style="margin: 2%;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20%" height="20%" fill="currentColor" class="bi bi-mortarboard-fill" viewBox="0 0 16 16">
+              <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5Z"/>
+              <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Z"/>
+            </svg>
+            <div class="card-body">              
+              <h1 class="card-title">Yangiliklar kiritish</h1>              
+            </div>
+            <div class="card-footer bg-transparent border-success">
+              <a class="nav-link active" aria-current="page" href="{% url 'arm_4_new' %}">
+                <i class="bi bi-book-half"></i>
+                Yangiliklar kiritish
+              </a>
+            </div>
+          </center>          
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <center style="margin: 2%;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20%" height="20%" fill="currentColor" class="bi bi-mortarboard-fill" viewBox="0 0 16 16">
+              <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5Z"/>
+              <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Z"/>
+            </svg>
+            <div class="card-body">              
+              <h1 class="card-title">Barcha yangiliklar</h1>              
+            </div>
+            <div class="card-footer bg-transparent border-success">
+              <a class="nav-link active" aria-current="page" href="{% url 'arm_4_list' %}">
+                <i class="bi bi-book-half"></i>
+                Barcha yangiliklar
+              </a>
+            </div>
+          </center>          
+        </div>
+      </div>          
+    </div> 
+    
+  {% endif %}
+    
+
+  {% if user.username == 'dekanat' %}
+    <aside class="main-sidebar">
+      <section class="sidebar">
+        <ul class="sidebar-menu tree" >
+          <li class="treeview ">
+            <a href="#">
+              <i class="fa fa-briefcase"></i> 
+              <span>ARM</span>
+              <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+            </a>          
+          </li>
+          <li class="treeview ">
+            <a href="#">
+              <i class="fa fa-users"></i> 
+              <span>Dekanat</span>
+              <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+            </a>                    
+          </li>
+          <li class="treeview ">
+            <a href="#">
+              <i class="fa fa-users"></i> 
+              <span>Talaba</span>
+              <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+            </a>                    
+          </li>                                            
+        </ul>
+      </section>
+    </aside>
+    <div class="content-wrapper" style="min-height: 600px;">
+      <section class="content-header">
+        <ul class="breadcrumb"><li><a href="{% url 'home' %}">Asosiy</a></li>
+          <li class="active">Bosh sahifa</li>
+        </ul>    
+      </section>
+      <section class="content">        
+        <div class="row">
+          <div class="col col-md-12">
+              <div class="box box-info">
+                  <div class="box-body">
+                      <div class="row">
+
+                          <div class="col-lg-3 col-xs-6">
+                              <!-- small box -->
+                              <div class="small-box items">
+                                  <div class="inner">
+                                      <h3>&nbsp;</h3>
+                                      <p>ARM</p>
+                                  </div>
+                                  <div class="icon">
+                                      <i class="fa fa-book"></i>
+                                  </div>
+                                  <a class="small-box-footer" href="#" data-pjax="0"><i class="fa fa-arrow-circle-right"></i> ARM</a>
+                              </div>
+                          </div>
+
+                          <div class="col-lg-3 col-xs-6">
+                              <!-- small box -->
+                              <div class="small-box items">
+                                  <div class="inner">
+                                      <h3>&nbsp;</h3>
+                                      <p>Dekanat</p>
+                                  </div>
+                                  <div class="icon">
+                                      <i class="fa fa-book"></i>
+                                  </div>
+                                  <a class="small-box-footer" href="https://hemis.kspi.uz/curriculum/subject" data-pjax="0"><i class="fa fa-arrow-circle-right"></i> Dekanat</a>
+
+                              </div>
+                          </div>
+
+                      </div>
+                      <!-- /.row -->
+
+                      <div class="row">
+                          <div class="col-lg-3 col-xs-6">
+                              <!-- small box -->
+                              <div class="small-box items">
+                                  <div class="inner">
+                                      <h3>&nbsp;</h3>
+                                      
+                                      <p>Talaba</p>
+                                  </div>
+                                  <div class="icon">
+                                      <i class="fa fa-building-o"></i>
+                                  </div>
+                                  <a class="small-box-footer" href="#"></i> Talaba</a>                        </div>
+                          </div>                       
+                      
+                      </div>
+                      <!-- /.row -->
+
+                  </div>
+              </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  {% endif %} 
+  {% if user.lavozimi == 'talaba' %}
+    
+    <div class="content-wrapper" style="min-height: 600px;">
+      <section class="content-header">
+        <ul class="breadcrumb"><li><a href="{% url 'home' %}">Asosiy</a></li>
+          <li class="active">Bosh sahifa</li>
+        </ul>    
+      </section>
+      <section class="content">        
+        <div class="row">
+          <div class="col col-md-12">
+              <div class="box box-info">
+                  <div class="box-body">
+                      <div class="row">
+
+                          <div class="col-lg-3 col-xs-6">
+                              <!-- small box -->
+                              <div class="small-box items">
+                                  <div class="inner">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" class="bi bi-mortarboard-fill" viewBox="0 0 16 16">
+                                      <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5Z"/>
+                                      <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Z"/>
+                                    </svg>
+                                      <h4>Yangiliklar</h4>
+                                  </div>
+                                  
+                                  <a class="small-box-footer" href="{% url 'yangilik' %}" data-pjax="0">
+                                    <i class="bi bi-mortarboard-fill"></i>
+                                     Yangiliklar
+                                  </a>
+                              </div>
+                          </div>
+
+                          <div class="col-lg-3 col-xs-6">
+                              <!-- small box -->
+                              <div class="small-box items">
+                                  <div class="inner">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" class="bi bi-mortarboard-fill" viewBox="0 0 16 16">
+                                      <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5Z"/>
+                                      <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Z"/>
+                                    </svg>
+                                      <h4>Barcha kitoblar</h4>
+                                  </div>
+                                  
+                                  <a class="small-box-footer" href="{% url 'barcha' %}" data-pjax="0">
+                                    <i class="bi bi-mortarboard-fill"></i>
+                                     Barcha kitoblar
+                                  </a>
+
+                              </div>
+                          </div>
+
+                          <div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box items">
+                                <div class="inner">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" class="bi bi-mortarboard-fill" viewBox="0 0 16 16">
+                                    <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5Z"/>
+                                    <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Z"/>
+                                  </svg>
+                                    
+                                    <h4>Kitob buyurtma</h4>
+                                </div>
+                                
+                                <a class="small-box-footer" href="{% url 'buyurtma' %}" data-pjax="0">
+                                  <i class="bi bi-mortarboard-fill"></i>
+                                   Kitob buyurtma
+                                </a>    
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-xs-6">
+                          <!-- small box -->
+                          <div class="small-box items">
+                              <div class="inner">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" class="bi bi-mortarboard-fill" viewBox="0 0 16 16">
+                                  <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5Z"/>
+                                  <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Z"/>
+                                </svg>
+                                  <h4>Olgan kitoblar</h4>
+                              </div>
+                              
+                              <a class="small-box-footer" href="{% url 'olgan_kitob' %}" data-pjax="0">
+                                <i class="bi bi-mortarboard-fill"></i>
+                                 Olgan kitoblar
+                              </a>
+
+                          </div>
+                        </div>
+
+                      <!-- /.row -->
+
+                      <div class="row">
+                          <!--pastgi qatordan davom etish-->               
+                      </div>
+                      <!-- /.row -->
+
+                  </div>
+              </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  {% endif %}
+  
+{% else %}
+  <div style="margin: 1% 4%;height: 100%;" id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">    
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://media.istockphoto.com/id/1135144614/photo/digital-tablet-and-eyeglasses-on-books-in-public-library.jpg?s=612x612&w=0&k=20&c=Ifr_Uo8NCchuXaEBJE7lZEtp7S0Ft79mXBCqusGFJF8=" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://media.istockphoto.com/id/143071446/photo/student-working-in-library-at-night.jpg?s=612x612&w=0&k=20&c=o46eCyJIm9DkkwzWwOjsVGKVzkf4FF4QHiLaeNwzfmI=" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://media.istockphoto.com/id/944631208/photo/education-concept-with-book-in-library.jpg?s=612x612&w=0&k=20&c=uJF-uOU5MRR-iwXqJEPAdXeaH-VJ-nqt6TdKUpEdEkk=" class="d-block w-100" alt="...">
+      </div>      
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">      
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">    
+      <span class="visually-hidden">Next</span>
+    </button>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4" style="margin: 1% 0;">
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://media.istockphoto.com/id/620952978/photo/female-student-studying-at-college-library.jpg?s=612x612&w=0&k=20&c=adgCR7el6C5l3mg_ermcj8-1G78HmVV5FbR4KzlbVP4=" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://media.istockphoto.com/id/620952978/photo/female-student-studying-at-college-library.jpg?s=612x612&w=0&k=20&c=adgCR7el6C5l3mg_ermcj8-1G78HmVV5FbR4KzlbVP4=" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://media.istockphoto.com/id/620952978/photo/female-student-studying-at-college-library.jpg?s=612x612&w=0&k=20&c=adgCR7el6C5l3mg_ermcj8-1G78HmVV5FbR4KzlbVP4=" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
+      </div>
+    </div>   
+
+    <div class="ui horizontal segments" >
+      <div class="ui segment" >
+        <h2 class="ui center aligned icon header">
+          <i class="circular users icon"></i>
+          Talabalar
+        </h2>
+      </div>
+      <div class="ui segment">
+        <h2 class="ui center aligned icon header">
+          <i class="circular users icon"></i>
+          Kitoblar
+        </h2>
+      </div>
+      <div class="ui segment">
+        <h2 class="ui center aligned icon header">
+          <i class="circular users icon"></i>
+          Friends
+        </h2>
+      </div>
+      <div class="ui segment">
+        <h2 class="ui center aligned icon header">
+          <i class="circular users icon"></i>
+          Friends
+        </h2>
+      </div>
+    </div>
+    <div class="navbar" style="margin: 2%;"></div>
+
+  </div>
+  
+  
+{% endif %}
+
+{% endblock content %}

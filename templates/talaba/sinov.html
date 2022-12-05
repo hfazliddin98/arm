@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+    {% if user.is_authenticated %}
+        {% if user.username == 'clay' %}
+           <h1>salom</h1>
+           {{event_list}}
+        {% endif %} 
+    {% endif %} 
+{% endblock content %}

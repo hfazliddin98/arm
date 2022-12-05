@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Talaba kirish{% endblock title %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    <aside class="main-sidebar">
+        <section class="sidebar">
+        <ul class="sidebar-menu tree">
+            <li class="">
+                <a href="{% url 'talaba-kitob' %}">
+                    <i class="bi bi-mortarboard-fill"></i>
+                    <span style="padding-left: 30px;">Yangi kitob kiritish</span>
+                    <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+                </a>
+            </li>
+
+            <li class="treeview ">
+                <a href="{% url 'talaba-javob' %}">
+                    <i class="bi bi-mortarboard-fill"></i>
+                    <span style="padding-left: 30px;">Barcha kitoblar</span>
+                    <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+                </a>
+            </li>
+
+        </ul>
+        </section>
+    </aside>
+    <div class="content-wrapper" style="min-height: 600px;">
+        <section class="content">
+
+          <table class="ui celled striped table">
+            <thead>
+              <tr>
+                <!--qatori hisobga olinsin-->
+                <th colspan="1"> №</th>
+                <th colspan="1">Familya</th>
+                <th colspan="1">Ism    </th>
+                <th colspan="1">Sharifi </th>
+                <th colspan="1">Fakultet</th>
+                <th colspan="1">Yo`nalish</th>
+                <th colspan="1">Kurs</th>
+                <th colspan="1">Guruh</th>
+                <th colspan="1">Raqami </th>
+                <th colspan="1">Sanasi</th>
+                <th colspan="1"><a href=" {% url 'new_kitob' %}">Yangi</a></th>
+              </tr>
+            </thead>
+
+            {% if talaba_list %}
+
+                {% for list  in talaba_list %}
+
+                <tbody>
+                    <tr>
+                    <!--qatori hisobga olinsin-->
+                    <td class="right aligned collapsing">{{ list.formulyar_raqami}}</td>
+                    <td class="right aligned collapsing">{{ list.familya}}</td>
+                    <td class="right aligned collapsing">{{ list.ism}}</td>
+                    <td class="right aligned collapsing">{{ list.sharifi}}</td>
+                    <td class="right aligned collapsing">{{ list.fakultet}}</td>
+                    <td class="right aligned collapsing">{{ list.yonalish}}</td>
+                    <td class="right aligned collapsing">{{ list.kurs}}</td>
+                    <td class="right aligned collapsing">{{ list.guruh}}</td>
+                    <td class="right aligned collapsing">{{ list.tel_raqami}} {{ list.id}}</td>
+                    <td class="right aligned collapsing">
+                       
+                            <a href=" {% url 'kitob-list' list.id %}">{{ list.ism}}</a>
+                       
+                    </td>
+                    <td class="right aligned collapsing"></td>
+                    </tr>
+                </tbody>
+
+                {% endfor %}
+               
+              {% endif %}
+          </table>
+
+        </section>
+      </div>
+    <div class="content-wrapper" style="min-height: 868px;">
+        <section class="content">
+          <h2>Yangi kitob kiritish </h2>
+          <h1>{% if talaba_list %}
+                {% for list  in talaba_list %}
+                    {{ list.familya }}
+                    {{ list.ism }}
+                {% endfor %}
+               
+            {% endif %}
+          </h1>
+
+        </section>
+    </div>
+{% endif %}
+
+
+
+
+{% endblock content %}

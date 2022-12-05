@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        {% if user.username == 'clay' %}
+            <aside class="main-sidebar">
+                <section class="sidebar">
+                <ul class="sidebar-menu tree" >
+                    <li class="treeview ">
+                    <a href="{% url 'talaba_new' %}">
+                        <i class="bi bi-mortarboard-fill"></i>
+                        <span style="padding-left: 30px;">Yangi kitob kirish</span>
+                        <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+                    </a>              
+                    </li>
+
+                    <li class="treeview ">
+                    <a href="{% url 'talaba_list' %}">
+                        <i class="bi bi-mortarboard-fill"></i>
+                        <span style="padding-left: 30px;">Barcha kitoblar</span>
+                        <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+                    </a>              
+                    </li>
+                    
+                </ul>
+                </section>
+            </aside>
+            <div class="content-wrapper" style="min-height: 868px;">          
+                <section class="content">        
+                    <div class="container-fluid">
+                        <div class="card">
+                            <div class="card-body">                            
+                                {{talaba.talaba}} 
+                                {{arm_1.kitob_nomi}} 
+                                <a  class="btn btn-secondary"type="button"  href="{% url 'talaba_edit' talaba.pk %}">Tahrirlash</a>
+                                <a class="btn btn-secondary" type="button"  href="{% url 'talaba_delete' talaba.pk %}">O`chirish</a>                            
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        {% endif %}
+    
+    {% endif %}
+    
+{% endblock content %}

@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        {% if user.username == 'clay' %}
+            <aside class="main-sidebar">
+                <section class="sidebar">
+                <ul class="sidebar-menu tree" >
+                    <li class="treeview ">
+                    <a href="{% url 'arm_2_new' %}">
+                        <i class="bi bi-mortarboard-fill"></i> 
+                        <span style="padding-left: 30px;">Yangi talaba kirish</span>
+                        <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+                    </a>              
+                    </li>
+
+                    <li class="treeview ">
+                    <a href="{% url 'arm_2_list' %}">
+                        <i class="bi bi-mortarboard-fill"></i>
+                        <span style="padding-left: 30px;">Barcha talabalar</span>
+                        <span class="pull-right-container"><i class="bi bi-mortarboard-fill"></i></span>
+                    </a>              
+                    </li>
+                    
+                </ul>
+                </section>
+            </aside>
+            <div class="content-wrapper" style="min-height: 868px;">          
+                <section class="content">        
+                    <h2>Kitobni o`chirish</h2>
+                    <form action="" method="post" >{% csrf_token %}     
+                        <p>"{{ arm_2.familya|title }}" nomli talabani o`chirishni istaysizmi?</p>          
+                        <button class="btn btn-primary" type="submit">Ha</button> 
+                    </form>
+                </section>
+            </div>
+        {% endif %}
+    {% else %}
+        <aside class="main-sidebar">
+            <section class="sidebar">
+            <ul class="sidebar-menu tree" >
+                <li class="treeview ">
+                <a href="#">
+                    <i class="fa fa-briefcase"></i> 
+                    <span>Yordam</span>
+                    <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                </a>              
+                </li>
+
+                <li class="treeview ">
+                <a href="#">
+                    <i class="fa fa-users"></i> 
+                    <span>Mehmon</span>
+                    <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                </a>              
+                </li>
+                
+            </ul>
+            </section>
+        </aside>
+        <div class="content-wrapper" style="min-height: 868px;">          
+            <section class="content">        
+                <h2>O`chirish huquqi sizda mavjud emas</h2>                
+            </section>
+        </div>
+    {% endif %}
+    
+{% endblock content %}

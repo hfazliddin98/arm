@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Talaba kirish{% endblock title %}
+
+{% block content %}
+{% for foy in us %} 
+
+    {% if user.is_authenticated %}
+
+        {% if user.username == '{{foy.author}}' %}
+    
+            <h1>salom</h1>
+        {% else %}
+        {{ foy.author }}
+            <h2>eroor</h2>
+        {% endif %}  
+        
+
+    {% endif %}
+
+{% endfor %}
+    
+
+{% endblock content %}

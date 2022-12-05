@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        {% if user.username == 'clay' %}
+            <aside class="main-sidebar">
+                <section class="sidebar">
+                <ul class="sidebar-menu tree" >
+                    <li class="treeview ">
+                    <a href="{% url 'yonalish_new' %}">
+                        <i class="fa fa-briefcase"></i> 
+                        <span>Yangi yo`nalish kirish</span>
+                        <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                    </a>              
+                    </li>
+
+                    <li class="treeview ">
+                    <a href="{% url 'yonalish_list' %}">
+                        <i class="fa fa-users"></i> 
+                        <span>Barcha yo`nalishlar</span>
+                        <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                    </a>              
+                    </li>
+                    
+                </ul>
+                </section>
+            </aside>
+            <div class="content-wrapper" style="min-height: 868px;">          
+                <section class="content">        
+                    <h2>Tahrirlash</h2>
+                    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+                        {{ form|crispy }}
+                    <button class="btn btn-primary" type="submit">Saqlsh</button> 
+                    </form> 
+                </section>
+            </div>
+        {% endif %}
+        {% if user.username == 'fakultet' %}
+            <aside class="main-sidebar">
+                <section class="sidebar">
+                <ul class="sidebar-menu tree" >
+                    <li class="treeview ">
+                    <a href="{% url 'yonalish_new' %}">
+                        <i class="fa fa-briefcase"></i> 
+                        <span>Yangi kitob kirish</span>
+                        <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                    </a>              
+                    </li>                  
+                    
+                </ul>
+                </section>
+            </aside>
+            <div class="content-wrapper" style="min-height: 868px;">          
+                <section class="content">        
+                    <h1>Sizda bunday huquq mavjud emas</h1>
+                </section>
+            </div>
+        {% endif %}
+    
+    {% endif %}
+    
+{% endblock content %}

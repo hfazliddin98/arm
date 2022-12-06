@@ -5,28 +5,16 @@
 {% block content %}
     {% if user.is_authenticated %}
         {% if user.username == 'clay' %}
-            <aside class="main-sidebar">
-                <section class="sidebar">
-                <ul class="sidebar-menu tree" >
-                    <li class="treeview ">
-                    <a href="{% url 'arm_1_new' %}">
-                        <i class="bi bi-book-half"></i> 
-                        <span style="padding-left: 30px;">Yangi kitob kirish</span>
-                        <span class="pull-right-container"><i class="bi bi-book-half"></i></span>
-                    </a>              
-                    </li>
-
-                    <li class="treeview ">
-                    <a href="{% url 'arm_1_list' %}">
-                        <i class="bi bi-book-half"></i> 
-                        <span style="padding-left: 30px;">Barcha kitoblar</span>
-                        <span class="pull-right-container"><i class="bi bi-book-half"></i></span>
-                    </a>              
-                    </li>
-                    
-                </ul>
-                </section>
-            </aside>
+        <div style="margin: 1% 3% 3% 3%; border-radius: 30%;">
+            <div class="ui bg-primary  menu">
+              
+              <a class="item" href="{% url 'arm_1_new' %}">
+                Yangi kitob kirish
+              </a>
+              <a class="item" href="{% url 'arm_1_list' %}">
+                Barcha kitoblar
+              </a>      
+            </div>
             <div class="content-wrapper" style="min-height: 868px;">          
                 <section class="content">        
                     <h2>Tahrirlash</h2>
@@ -36,6 +24,7 @@
                     </form> 
                 </section>
             </div>
+        </div>
         {% endif %}
         
     

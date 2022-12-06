@@ -62,15 +62,17 @@
                   <td class="right aligned collapsing">{{arm_1.isbn}}</td>
                   <td class="right aligned collapsing">{{arm_1.tili}}</td>
                   <td class="right aligned collapsing">{{arm_1.sana}}</td>
-                  <td class="right aligned collapsing"><a href="{% url 'arm_1_detail' arm_1.pk %}">Ko`rish</a></td>                               
+                  <td class="right aligned collapsing">
+                    <a class="mini ui button" href="{% url 'arm_1_detail' arm_1.pk %}">
+                      <i class="user icon"></i>
+                      Ko`rish
+                    </a>
+                  </td>                               
                 </tr>
               </tbody>
 
             {% endfor %}
-          </table>  
-          
-                
-           
+          </table>          
         </section>
       </div>
     </div>
@@ -95,7 +97,7 @@
           </div>          
         </div>
       </div>
-      <div class="content-wrapper" style="min-height: 600px;">          
+      <div class="content-wrapper" style="min-height: 100%;">          
         <section class="content"> 
                  
           <table class="ui celled striped table">

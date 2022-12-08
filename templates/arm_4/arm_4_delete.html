@@ -3,28 +3,24 @@
 {% block content %}
     {% if user.is_authenticated %}
         {% if user.username == 'arm_4' %}
-            <aside class="main-sidebar">
-                <section class="sidebar">
-                <ul class="sidebar-menu tree" >
-                    <li class="treeview ">
-                    <a href="{% url 'arm_3_new' %}">
-                        <i class="fa fa-briefcase"></i> 
-                        <span>Yangilik kirish</span>
-                        <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
-                    </a>              
-                    </li>
-
-                    <li class="treeview ">
-                    <a href="{% url 'arm_3_list' %}">
-                        <i class="fa fa-users"></i> 
-                        <span>Barcha yangiliklar</span>
-                        <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
-                    </a>              
-                    </li>
-                    
-                </ul>
-                </section>
-            </aside>
+        <div style="margin: 1% 3% 0 3%; border-radius: 30%;">
+            <div class="ui bg-primary  menu">
+              
+              <a class="item" href="{% url 'arm_4_new' %}">
+                Yangi kitob kirish
+              </a>
+              <a class="item" href="{% url 'arm_4_list' %}">
+                Barcha kitoblar
+              </a>
+              <div class="right menu">
+                <div class="item">
+                  <div class="ui icon input">
+                    <input type="text" placeholder="Umumiy qidiruv...">
+                    <i class="search link icon"></i>
+                  </div>
+                </div>          
+              </div>
+            </div>
             <div class="content-wrapper" style="min-height: 868px;">          
                 <section class="content">        
                     <h2>Kitobni o`chirish</h2>
@@ -34,35 +30,8 @@
                     </form>
                 </section>
             </div>
-        {% endif %}
-    {% else %}
-        <aside class="main-sidebar">
-            <section class="sidebar">
-            <ul class="sidebar-menu tree" >
-                <li class="treeview ">
-                <a href="{% url 'arm_4_new' %}">
-                    <i class="fa fa-briefcase"></i> 
-                    <span>Yangi kitob kirish</span>
-                    <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
-                </a>              
-                </li>
-
-                <li class="treeview ">
-                <a href="{% url 'arm_3_list' %}">
-                    <i class="fa fa-users"></i> 
-                    <span>Barcha kitoblar</span>
-                    <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
-                </a>              
-                </li>
-                
-            </ul>
-            </section>
-        </aside>
-        <div class="content-wrapper" style="min-height: 868px;">          
-            <section class="content">        
-                <h2>O`chirish huquqi sizda mavjud emas</h2>                
-            </section>
         </div>
+        {% endif %}
     {% endif %}
     
 {% endblock content %}

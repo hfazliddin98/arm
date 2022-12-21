@@ -20,29 +20,29 @@
       <div class="row">
         <div class="col">
           <nav class="navbar navbar-dark bg-primary" style="padding: 1% 0px 1% 0px; color: white;">
-            <div class="col-sm-9 col-lg-10" style="padding: 1%;">
+            <div class="col-sm-9 col-md-10" style="padding: 1%;">
               <p class="h4" style="padding: 0 5%; margin: 0;">
                 <a class="navbar-brand" href="{% url 'home' %}">ARM OTM</a>
               </p>
             </div>            
             {% if user.is_authenticated %}
-            <div class="col-sm-1 col-lg-1 text-center">
+            <div class="col-sm-1 col-md-1 text-center">
               <p class="h6">
                 <a class="nav-link active" aria-current="page" href="">{{user.username | title}}</a>
               </p>      
             </div>
-            <div class="col-sm-2 col-lg-1 text-center">
+            <div class="col-sm-2 col-md-1 text-center">
               <p class="h6">
                 <a class="nav-link active" aria-current="page" href="{% url 'logout' %}">Chiqish</a>
               </p>
             </div>
             {% else %}
-            <div class="col-1 text-center">
+            <div class="col-sm-1 col-md-1 text-center">
               <p class="h6">
                 <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Kirish</a>
               </p>      
             </div>
-            <div class="col-2 text-center">
+            <div class="col-sm-2 col-md-1 text-center">
               <p class="h6">
                 <a class="nav-link active" aria-current="page" href="{% url 'signup' %}">Ro`yxatdan o`tish</a>
               </p>

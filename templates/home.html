@@ -541,94 +541,86 @@
   {% endif %}
   
 {% else %}
-  <div style="margin: 1% 4%;height: 100%;" id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">    
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="https://media.istockphoto.com/id/1135144614/photo/digital-tablet-and-eyeglasses-on-books-in-public-library.jpg?s=612x612&w=0&k=20&c=Ifr_Uo8NCchuXaEBJE7lZEtp7S0Ft79mXBCqusGFJF8=" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="https://media.istockphoto.com/id/143071446/photo/student-working-in-library-at-night.jpg?s=612x612&w=0&k=20&c=o46eCyJIm9DkkwzWwOjsVGKVzkf4FF4QHiLaeNwzfmI=" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="https://media.istockphoto.com/id/944631208/photo/education-concept-with-book-in-library.jpg?s=612x612&w=0&k=20&c=uJF-uOU5MRR-iwXqJEPAdXeaH-VJ-nqt6TdKUpEdEkk=" class="d-block w-100" alt="...">
+    <div class="container-fluid">
+      <div class="row">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="https://media.istockphoto.com/id/1135144614/photo/digital-tablet-and-eyeglasses-on-books-in-public-library.jpg?s=612x612&w=0&k=20&c=Ifr_Uo8NCchuXaEBJE7lZEtp7S0Ft79mXBCqusGFJF8=" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="https://media.istockphoto.com/id/143071446/photo/student-working-in-library-at-night.jpg?s=612x612&w=0&k=20&c=o46eCyJIm9DkkwzWwOjsVGKVzkf4FF4QHiLaeNwzfmI=" class="d-block w-100" alt="...">
+            </div>            
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
       </div>      
+      
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">      
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">    
-      <span class="visually-hidden">Next</span>
-    </button>
 
-    <div class="row row-cols-1 row-cols-md-3 g-4" style="margin: 1% 0;">
-      <div class="col">
-        <div class="card h-100">
-          <img src="https://media.istockphoto.com/id/620952978/photo/female-student-studying-at-college-library.jpg?s=612x612&w=0&k=20&c=adgCR7el6C5l3mg_ermcj8-1G78HmVV5FbR4KzlbVP4=" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <img src="https://media.istockphoto.com/id/620952978/photo/female-student-studying-at-college-library.jpg?s=612x612&w=0&k=20&c=adgCR7el6C5l3mg_ermcj8-1G78HmVV5FbR4KzlbVP4=" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
+    <div class="container">
+      <div class="row">        
+        <div class="col-lg-4 col-sm-12 col-md-6">
+          <div class="card h-100">
+            <img src="https://media.istockphoto.com/id/620952978/photo/female-student-studying-at-college-library.jpg?s=612x612&w=0&k=20&c=adgCR7el6C5l3mg_ermcj8-1G78HmVV5FbR4KzlbVP4=" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <img src="https://media.istockphoto.com/id/620952978/photo/female-student-studying-at-college-library.jpg?s=612x612&w=0&k=20&c=adgCR7el6C5l3mg_ermcj8-1G78HmVV5FbR4KzlbVP4=" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+          <div class="col-lg-4 col-sm-12 col-md-6">
+            <div class="card h-100">
+              <img src="https://media.istockphoto.com/id/620952978/photo/female-student-studying-at-college-library.jpg?s=612x612&w=0&k=20&c=adgCR7el6C5l3mg_ermcj8-1G78HmVV5FbR4KzlbVP4=" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
+            </div>
           </div>
-          <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
+          <div class="col-lg-4 col-sm-12 col-md-6">
+            <div class="card h-100">
+              <img src="https://media.istockphoto.com/id/620952978/photo/female-student-studying-at-college-library.jpg?s=612x612&w=0&k=20&c=adgCR7el6C5l3mg_ermcj8-1G78HmVV5FbR4KzlbVP4=" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>   
-
-    <div class="ui horizontal segments" >
-      <div class="ui segment" >
-        <h2 class="ui center aligned icon header">
-          <i class="circular users icon"></i>
-          Talabalar
-        </h2>
-      </div>
-      <div class="ui segment">
-        <h2 class="ui center aligned icon header">
-          <i class="circular users icon"></i>
-          Kitoblar
-        </h2>
-      </div>
-      <div class="ui segment">
-        <h2 class="ui center aligned icon header">
-          <i class="circular users icon"></i>
-          Friends
-        </h2>
-      </div>
-      <div class="ui segment">
-        <h2 class="ui center aligned icon header">
-          <i class="circular users icon"></i>
-          Friends
-        </h2>
+        </div> 
       </div>
     </div>
-    <div class="navbar" style="margin: 2%;"></div>
 
-  </div>
-  
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-4 text-center">
+          <h4>kitob</h4>
+        </div>
+        <div class="col-4 text-center"><h4>talaba</h4></div>
+        <div class="col-4 text-center"><h4>jurnal</h4></div>
+      </div>
+    </div>  
   
 {% endif %}
 

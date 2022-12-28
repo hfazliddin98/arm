@@ -33,7 +33,7 @@ DEBUG = env.bool("DEBUG", default=False)
 
 
 # domen nomi kiritiladi 'clay.com' kabi
-ALLOWED_HOSTS = ['e-library.kspi.uz', '192.168.0.253', '127.0.0.1']
+ALLOWED_HOSTS = ['.herokuapp.com', 'e-library.kspi.uz', '192.168.0.253', '127.0.0.1']
 
 
 # Application definition

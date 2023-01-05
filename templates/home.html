@@ -8,102 +8,10 @@
 {% if user.is_authenticated %}
   {% if user.username == 'clay' or user.username == 'haker'  %}
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-2" style="padding: 0;">                
-          {% if user.username == 'clay' or user.username == 'haker' %}
-          <div class="text-bg-dark" style="padding-left: 5%; min-height: 1000px;">
-            <div class="col">
-              <button class="btn btn-dark" style="text-align: left; padding-left: 10%; border-radius: 0; min-width: 100%;" type="button" data-bs-toggle="collapse" data-bs-target="#arm" aria-expanded="false" aria-controls="arm">
-                <i class="bi bi-book-half"></i>
-                ARM 
-              </button>
-              <div class="collapse" id="arm" style="background-color: rgb(48, 59, 59);">
-                <ul class="list-group">
-                  <li class="list-group-item" style="text-align: left; padding-left: 10%; background-color: rgb(48, 59, 59); border: 0; color: white;">
-                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="arm1" checked>
-                    <label class="form-check-label" for="arm1"><a class="dropdown-item" href="{% url 'arm_1_list' %}">ARM-1</a></label>
-                  </li>
-                  <li class="list-group-item" style="text-align: left; padding-left: 10%; background-color: rgb(48, 59, 59); border: 0; color: white;">
-                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="arm2">
-                    <label class="form-check-label" for="arm2"><a class="dropdown-item" href="{% url 'arm_2_list' %}">ARM-2</a></label>
-                  </li>
-                  <li class="list-group-item" style="text-align: left; padding-left: 10%; background-color: rgb(48, 59, 59); border: 0; color: white;">
-                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="thirdRadio">
-                    <label class="form-check-label" for="thirdRadio"><a class="dropdown-item" href="{% url 'arm_3_list' %}">ARM-3</a></label>
-                  </li>
-                  <li class="list-group-item" style="text-align: left; padding-left: 10%; background-color: rgb(48, 59, 59); border: 0; color: white;">
-                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="thirdRadio">
-                    <label class="form-check-label" for="thirdRadio"><a class="dropdown-item" href="{% url 'arm_4_list' %}">ARM-4</a> </label>
-                  </li>
-                </ul>                
-              </div>
-    
-              <button class="btn btn-dark" style="text-align: left; padding-left: 10%; border-radius: 0; min-width: 100%;" type="button" data-bs-toggle="collapse" data-bs-target="#dekanat" aria-expanded="false" aria-controls="dekanat">
-                <i class="bi bi-bank"></i>
-                Dekanat 
-              </button>
-              <div class="collapse" id="dekanat" style="background-color: rgb(48, 59, 59);">
-                <ul class="list-group">
-                  <li class="list-group-item" style="text-align: left; padding-left: 10%; background-color: rgb(48, 59, 59); border: 0; color: white;">
-                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="fakultet" checked>
-                    <label class="form-check-label" for="fakultet"><a class="dropdown-item" href="{% url 'fakultet_list' %}">Fakultet</a></label>
-                  </li>
-                  <li class="list-group-item" style="text-align: left; padding-left: 10%; background-color: rgb(48, 59, 59); border: 0; color: white;">
-                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="kafedra">
-                    <label class="form-check-label" for="kafedra"><a class="dropdown-item" href="{% url 'kafedra_list' %}">Kafedra</a></label>
-                  </li>
-                  <li class="list-group-item" style="text-align: left; padding-left: 10%; background-color: rgb(48, 59, 59); border: 0; color: white;">
-                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="yonalish">
-                    <label class="form-check-label" for="yonalish"><a class="dropdown-item" href="{% url 'yonalish_list' %}">Yo`nalish</a></label>
-                  </li>
-                  <li class="list-group-item" style="text-align: left; padding-left: 10%; background-color: rgb(48, 59, 59); border: 0; color: white;">
-                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="guruh">
-                    <label class="form-check-label" for="guruh"><a class="dropdown-item" href="{% url 'guruh_list' %}">Guruh</a></label>
-                  </li>
-                  <li class="list-group-item" style="text-align: left; padding-left: 10%; background-color: rgb(48, 59, 59); border: 0; color: white;">
-                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="tyutr">
-                    <label class="form-check-label" for="tyutr"><a class="dropdown-item" href="#">Tyutr</a></label>
-                  </li>
-                  <li class="list-group-item" style="text-align: left; padding-left: 10%; background-color: rgb(48, 59, 59); border: 0; color: white;">
-                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="fanlar">
-                    <label class="form-check-label" for="fanlar"><a class="dropdown-item" href="#">Fanlar</a></label>
-                  </li>
-                </ul>                
-              </div>
-    
-              <button class="btn btn-dark" style="text-align: left; padding-left: 10%; border-radius: 0; min-width: 100%;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
-                <i class="bi bi-mortarboard-fill"></i>
-                Talaba 
-              </button> 
-              <div class="collapse" id="collapseExample1" style="background-color: rgb(48, 59, 59);">
-                <ul class="list-group">
-                  <li class="list-group-item" style="text-align: left; padding-left: 10%; background-color: rgb(48, 59, 59); border: 0; color: white;">
-                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="talaba_new" checked>
-                    <label class="form-check-label" for="talaba_new"><a class="dropdown-item" href="{% url 'talaba_new' %}">Yangi talaba kiritish</a></label>                    
-                  </li>
-                  <li class="list-group-item" style="text-align: left; padding-left: 10%; background-color: rgb(48, 59, 59); border: 0; color: white;">
-                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="talabalar">
-                    <label class="form-check-label" for="talabalar"><a class="dropdown-item" href="{% url 'talaba_list' %}">Barcha talabalar</a></label>
-                  </li>
-                  <li class="list-group-item" style="text-align: left; padding-left: 10%; background-color: rgb(48, 59, 59); border: 0; color: white;">
-                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="yangiliklar">
-                    <label class="form-check-label" for="yangiliklar"><a class="dropdown-item" href="#">Yangiliklar</a></label>
-                  </li>
-                  <li class="list-group-item" style="text-align: left; padding-left: 10%; background-color: rgb(48, 59, 59); border: 0; color: white;">
-                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="yangiliklar">
-                    <label class="form-check-label" for="yangiliklar"><a class="dropdown-item" href="#">Qarizdorliklar</a></label>
-                  </li>
-                </ul>                
-              </div>
-
-            </div>  
-          </div>  
-          {% endif %}      
-        </div>
-        <div class="col-10">
+      <div class="row">        
+        <div class="col-12">
           <div class="container-fluid text-center">
             <div class="row">
-
               <div class="col-sm-12 col-lg-4 col-md-6 col-xl-3" style="margin: 2% 0;">
                 <div class="card ">                
                   <div class="card-body">
